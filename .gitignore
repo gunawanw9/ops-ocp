@@ -2,3 +2,4 @@ openswitch
 parts
 snap
 stage
+*.snap
