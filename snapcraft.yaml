@@ -2,7 +2,7 @@ name: openswitch
 version: 0.1.0
 summary: OpenSwitch Network Operating System
 description: A standalone version of OpenSwitch from openswitch.net
-icon: ./openswitch/src/ops-webui/tools/reference/img/OpenSwitchLogo.png
+icon: openswitch/src/ops-webui/tools/reference/img/OpenSwitchLogo.png
 
 apps:
   ops-sysd:
