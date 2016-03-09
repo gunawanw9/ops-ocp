@@ -8,10 +8,10 @@ This requires Ubuntu 16.04 and Snapcraft 2.X.X
 
 ######################################################
 
-Clone ops-snappy.
-      'clone https://github.com/mabnhdev/ops-snappy.git'
+Clone ops-ocp.
+      'clone https://github.com/mabnhdev/ops-ocp.git'
 
-Change dir into ./ops-snappy.
+Change dir into ./ops-ocp.
 
 Run './setup_snappy'
     * Fetches any prerequisite packages.
