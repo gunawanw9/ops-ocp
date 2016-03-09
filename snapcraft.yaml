@@ -27,7 +27,7 @@ parts:
     # - python {src}/ops/schema/sanitize.py {src}/ops/schema/vswitch.extschema  {src}/ops-openvswitch/vswitchd/vswitch.ovsschema
     # - cp {src}/ops/schema/configdb.ovsschema {src}/ops-openvswitch/vswitchd/configdb.ovsschema
     # - cp {src}/ops/schema/*.xml {src}/ops-openvswitch/vswitchd/
-    source: ./openswitch/src/ops-openvswitch
+    source: openswitch/src/ops-openvswitch
     build-packages:
       - libltdl-dev
 
@@ -47,7 +47,7 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-utils
+    source: openswitch/src/ops-utils
     after: [ openvswitch ]
 
   gtest:
@@ -57,7 +57,7 @@ parts:
 
   ops-config-yaml:
     plugin: cmake
-    source: ./openswitch/src/ops-config-yaml
+    source: openswitch/src/ops-config-yaml
     after: [gtest]
     build-packages:
         # if [ ! -e /usr/include/linux/i2c-dev-user.h ] ; then
@@ -76,13 +76,13 @@ parts:
       - "--enable-ovsdb"
       - "--enable-vtysh"
       - "--enable-shared"
-    source: ./openswitch/src/ops-cli
+    source: openswitch/src/ops-cli
     after: [ openvswitch, fixup-ops-openvswitch-libs ]
     build-packages: [ libreadline-dev, pkg-config ]
 
   ops-aaa-utils:
     plugin: python2
-    source: ./openswitch/src/ops-aaa-utils
+    source: openswitch/src/ops-aaa-utils
 
   ops-arpmgrd:
     plugin: cmake
@@ -92,12 +92,12 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-arpmgrd
+    source: openswitch/src/ops-arpmgrd
     after: [ openvswitch ]
 
   ops-cfgd:
     plugin: python2
-    source: ./openswitch/src/ops-cfgd
+    source: openswitch/src/ops-cfgd
 
   ops-fand:
     plugin: cmake
@@ -107,7 +107,7 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-fand
+    source: openswitch/src/ops-fand
     after: [ openvswitch, ops-cli, ops-config-yaml ]
 
   ops-intfd:
@@ -118,7 +118,7 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-intfd
+    source: openswitch/src/ops-intfd
     after: [ openvswitch, ops-config-yaml, ops-utils ]
 
   ops-ledd:
@@ -129,7 +129,7 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-ledd
+    source: openswitch/src/ops-ledd
     after: [ openvswitch, ops-cli, ops-config-yaml ]
 
   ops-pmd:
@@ -140,7 +140,7 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-pmd
+    source: openswitch/src/ops-pmd
     after: [ openvswitch, ops-config-yaml ]
 
   ops-powerd:
@@ -151,7 +151,7 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-powerd
+    source: openswitch/src/ops-powerd
     after: [ openvswitch, ops-cli, ops-config-yaml ]
 
   ops-portd:
@@ -162,12 +162,12 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-portd
+    source: openswitch/src/ops-portd
     after: [ openvswitch ]
 
   ops-restd:
     plugin: python2
-    source: ./openswitch/src/ops-restd
+    source: openswitch/src/ops-restd
     python-pkgs:
       - tornado
       - certifi
@@ -182,7 +182,7 @@ parts:
 #      - "-DCMAKE_BUILD_TYPE=Debug"
 #      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
 #      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-#    source: ./openswitch/src/ops-switchd-opennsl-plugin
+#    source: openswitch/src/ops-switchd-opennsl-plugin
 #    after: [ openvswitch ]
 
   ops-sysd:
@@ -195,7 +195,7 @@ parts:
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
     build-packages:
       - zlib1g-dev
-    source: ./openswitch/src/ops-sysd
+    source: openswitch/src/ops-sysd
     after: [ openvswitch, ops-config-yaml, ops-utils ]
 
   ops-tempd:
@@ -206,7 +206,7 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-tempd
+    source: openswitch/src/ops-tempd
     after: [ openvswitch, ops-cli, ops-config-yaml ]
 
   ops-vland:
@@ -217,9 +217,9 @@ parts:
       - "-DCMAKE_BUILD_TYPE=Debug"
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
-    source: ./openswitch/src/ops-vland
+    source: openswitch/src/ops-vland
     after: [ openvswitch ]
 
 #  ops-webui:
 #    plugin: nodejs
-#    source: ./openswitch/src/ops-webui
+#    source: openswitch/src/ops-webui
