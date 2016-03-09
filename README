@@ -1,0 +1,1200 @@
+OpenSwitch Snappy build
+
+######################################################
+
+Be Warned, this is still a work in progress!!!
+
+This requires Ubuntu 16.04 and Snapcraft 2.X.X
+
+######################################################
+
+Clone ops-snappy.
+      'clone https://github.com/mabnhdev/ops-snappy.git'
+
+Change dir into ./ops-snappy.
+
+Run './setup_snappy'
+    * Fetches any prerequisite packages.
+    * Fetches the Openswitch source code.
+      - Using the ops-debian git repository 'alphanetworks' branch.
+    * Fixes up things not handled by snapcraft yet.
+
+
+You can now use snapcraft et. al.
+
+
+###################################################################
+# The following is a listing of the contents debian reference .debs
+###################################################################
+
+
+=====================================
+==
+== Contents of ./config-yaml-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:56 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:56 ./usr/include/
+lrwxrwxrwx root/root         0 2016-03-08 06:56 ./usr/include/i2c.h -> /home/root/OpenSwitchGitHub/alphanetworks-branch/ops-debian/src/ops-config-yaml/include/i2c.h
+lrwxrwxrwx root/root         0 2016-03-08 06:56 ./usr/include/config-yaml.h -> /home/root/OpenSwitchGitHub/alphanetworks-branch/ops-debian/src/ops-config-yaml/include/config-yaml.h
+drwxr-xr-x root/root         0 2016-03-08 06:56 ./usr/lib/
+lrwxrwxrwx root/root         0 2016-03-08 06:56 ./usr/lib/libconfig-yaml.so -> libconfig-yaml.so.0.1.0
+-rw-r--r-- root/root    462576 2016-03-08 06:56 ./usr/lib/libconfig-yaml.so.0.1.0
+drwxr-xr-x root/root         0 2016-03-08 06:56 ./usr/lib/pkgconfig/
+-rw-r--r-- root/root       894 2016-03-08 06:56 ./usr/lib/pkgconfig/ops-config-yaml.pc
+
+
+=====================================
+==
+== Contents of ./opennsl-3.1.0.3-alpha-snx60a0-486f-amd64.deb
+
+drwxr-xr-x root/root   0 2016-03-08 06:59 ./
+drwxr-xr-x root/root   0 2016-03-08 06:59 ./usr/
+drwxr-xr-x root/root   0 2016-03-08 06:59 ./usr/include/
+drwxr-xr-x root/root   0 2016-03-03 13:13 ./usr/include/opennsl/
+-rw-r--r-- root/root 6637 2016-03-03 13:13 ./usr/include/opennsl/types.h
+-rw-r--r-- root/root 92995 2016-03-03 13:13 ./usr/include/opennsl/port.h
+-rw-r--r-- root/root 82836 2016-03-03 13:13 ./usr/include/opennsl/cosq.h
+-rw-r--r-- root/root  5086 2016-03-03 13:13 ./usr/include/opennsl/init.h
+-rw-r--r-- root/root  2352 2016-03-03 13:13 ./usr/include/opennsl/tx.h
+-rw-r--r-- root/root 31779 2016-03-03 13:13 ./usr/include/opennsl/rx.h
+-rw-r--r-- root/root 87189 2016-03-03 13:13 ./usr/include/opennsl/field.h
+-rw-r--r-- root/root 21380 2016-03-03 13:13 ./usr/include/opennsl/trunk.h
+-rw-r--r-- root/root 31165 2016-03-03 13:13 ./usr/include/opennsl/switch.h
+-rw-r--r-- root/root  2745 2016-03-03 13:13 ./usr/include/opennsl/policer.h
+-rw-r--r-- root/root  4598 2016-03-03 13:13 ./usr/include/opennsl/multicast.h
+-rw-r--r-- root/root  1326 2016-03-03 13:13 ./usr/include/opennsl/mpls.h
+-rw-r--r-- root/root 16119 2016-03-03 13:13 ./usr/include/opennsl/stg.h
+-rw-r--r-- root/root 56340 2016-03-03 13:13 ./usr/include/opennsl/mirror.h
+-rw-r--r-- root/root  3032 2016-03-03 13:13 ./usr/include/opennsl/error.h
+-rw-r--r-- root/root 38434 2016-03-03 13:13 ./usr/include/opennsl/l2.h
+-rw-r--r-- root/root  2069 2016-03-03 13:13 ./usr/include/opennsl/stack.h
+-rw-r--r-- root/root 10907 2016-03-03 13:13 ./usr/include/opennsl/vxlan.h
+-rw-r--r-- root/root 57537 2016-03-03 13:13 ./usr/include/opennsl/l3.h
+-rw-r--r-- root/root 10705 2016-03-03 13:13 ./usr/include/opennsl/pkt.h
+-rw-r--r-- root/root 13491 2016-03-03 13:13 ./usr/include/opennsl/knet.h
+-rw-r--r-- root/root 11306 2016-03-03 13:13 ./usr/include/opennsl/link.h
+-rw-r--r-- root/root  7680 2016-03-03 13:13 ./usr/include/opennsl/tunnel.h
+-rw-r--r-- root/root 34058 2016-03-03 13:13 ./usr/include/opennsl/stat.h
+-rw-r--r-- root/root 16247 2016-03-03 13:13 ./usr/include/opennsl/vlan.h
+-rw-r--r-- root/root 10137 2016-03-03 13:13 ./usr/include/LICENSE
+drwxr-xr-x root/root     0 2016-03-03 13:13 ./usr/include/examples/
+-rwxr-xr-x root/root  4643 2016-03-03 13:13 ./usr/include/examples/util.h
+drwxr-xr-x root/root     0 2016-03-03 13:13 ./usr/include/sal/
+-rw-r--r-- root/root  8205 2016-03-03 13:13 ./usr/include/sal/types.h
+-rwxr-xr-x root/root  1064 2016-03-03 13:13 ./usr/include/sal/commdefs.h
+-rw-r--r-- root/root  1281 2016-03-03 13:13 ./usr/include/sal/driver.h
+-rw-r--r-- root/root 20386 2016-03-03 13:13 ./usr/include/sal/compiler.h
+drwxr-xr-x root/root     0 2016-03-03 13:13 ./usr/include/shared/
+-rw-r--r-- root/root  3388 2016-03-03 13:13 ./usr/include/shared/shell.h
+-rwxr-xr-x root/root  2172 2016-03-03 13:13 ./usr/include/shared/types.h
+-rwxr-xr-x root/root  4461 2016-03-03 13:13 ./usr/include/shared/port.h
+-rw-r--r-- root/root 25348 2016-03-03 13:13 ./usr/include/shared/rx.h
+-rw-r--r-- root/root  6534 2016-03-03 13:13 ./usr/include/shared/portmode.h
+-rwxr-xr-x root/root  1617 2016-03-03 13:13 ./usr/include/shared/phyreg.h
+-rw-r--r-- root/root  1321 2016-03-03 13:13 ./usr/include/shared/switch.h
+-rwxr-xr-x root/root  2880 2016-03-03 13:13 ./usr/include/shared/gport.h
+-rwxr-xr-x root/root  1261 2016-03-03 13:13 ./usr/include/shared/util.h
+-rwxr-xr-x root/root  1969 2016-03-03 13:13 ./usr/include/shared/phyconfig.h
+-rw-r--r-- root/root  4948 2016-03-03 13:13 ./usr/include/shared/error.h
+-rw-r--r-- root/root 11671 2016-03-03 13:13 ./usr/include/shared/pbmp.h
+-rw-r--r-- root/root  5975 2016-03-03 13:13 ./usr/include/shared/bitop.h
+-rw-r--r-- root/root 15332 2016-03-03 13:13 ./usr/include/shared/port_ability.h
+drwxr-xr-x root/root     0 2016-03-08 06:59 ./usr/lib/
+drwxr-xr-x root/root     0 2016-03-08 06:59 ./usr/lib/pkgconfig/
+-rw-r--r-- root/root   284 2016-03-08 06:59 ./usr/lib/pkgconfig/opennsl.pc
+-rw-r--r-- root/root 239446520 2016-03-08 06:59 ./usr/lib/libopennsl.so.1
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./usr/bin/
+-rwxr-xr-x root/root    824944 2016-03-08 06:59 ./usr/bin/netserve
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./etc/
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./etc/modprobe.d/
+-rw-r-xr-x root/root       122 2016-03-08 06:59 ./etc/modprobe.d/bcm-options.conf
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./etc/udev/
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./etc/udev/rules.d/
+-rw-r--r-- root/root        89 2016-03-08 06:59 ./etc/udev/rules.d/70-bcm.rules
+-rwxr-xr-x root/root       243 2016-03-08 06:59 ./etc/udev/rules.d/bcm_devices.sh
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./etc/modules-load.d/
+-rw-r-xr-x root/root        59 2016-03-08 06:59 ./etc/modules-load.d/bcm-modules.conf
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./lib/
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./lib/modules/
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./lib/modules/3.18.26-amd64/
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./lib/modules/3.18.26-amd64/extra/
+drwxr-xr-x root/root         0 2016-03-08 06:59 ./lib/modules/3.18.26-amd64/extra/opennsl/
+-rw-r--r-- root/root     71256 2016-03-08 06:59 ./lib/modules/3.18.26-amd64/extra/opennsl/linux-kernel-bde.ko
+-rw-r--r-- root/root     27824 2016-03-08 06:59 ./lib/modules/3.18.26-amd64/extra/opennsl/linux-user-bde.ko
+-rw-r--r-- root/root     98240 2016-03-08 06:59 ./lib/modules/3.18.26-amd64/extra/opennsl/linux-bcm-knet.ko
+lrwxrwxrwx root/root         0 2016-03-08 06:59 ./usr/lib/libopennsl.so -> /home/root/OpenSwitchGitHub/alphanetworks-branch/ops-debian/build/shadow/opennsl-3.1.0.3-cdp/debian/usr/lib/libopennsl.so.1
+
+
+=====================================
+==
+== Contents of ./openswitch_1.1.5-1_amd64.deb
+
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/usr/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/usr/lib/python2.7/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/usr/lib/python2.7/site-packages/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/openswitch/
+-rw-r--r-- root/root       204 2016-03-06 04:56 ./usr/share/doc/openswitch/README.Debian
+-rw-r--r-- root/root       153 2016-03-06 04:56 ./usr/share/doc/openswitch/changelog.Debian.gz
+-rw-r--r-- root/root      1691 2016-03-06 04:56 ./usr/share/doc/openswitch/copyright
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/openvswitch/
+-rw-r--r-- root/root      1304 2016-03-08 07:01 ./usr/share/openvswitch/dhcp_leases.extschema
+-rw-r--r-- root/root    126551 2016-03-08 07:01 ./usr/share/openvswitch/vswitch.extschema
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/sbin/
+-rwxr-xr-x root/root       162 2016-03-08 07:01 ./usr/sbin/ops-init-namespace
+-rwxr-xr-x root/root       668 2016-03-08 07:01 ./usr/sbin/ops-init
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/bin/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./var/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./var/run/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./var/run/openvswitch/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/profile.d/
+-rw-r--r-- root/root       525 2016-03-08 07:01 ./etc/profile.d/ops-profile
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/sudoers.d/
+-r--r----- root/root        37 2016-03-08 07:01 ./etc/sudoers.d/useradd
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/environment/
+-rwxr-xr-x root/root       173 2016-03-08 07:01 ./etc/environment/environment
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/init.d/
+-rwxr-xr-x root/root       928 2016-03-08 07:01 ./etc/init.d/openswitch.sh
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/pam.d/
+-rw-r--r-- root/root       193 2016-03-08 07:01 ./etc/pam.d/rest
+-rw-r--r-- root/root       883 2016-03-08 07:01 ./etc/pam.d/common-auth-access
+-rw-r--r-- root/root       819 2016-03-08 07:01 ./etc/pam.d/common-session-access
+-rw-r--r-- root/root      1103 2016-03-08 07:01 ./etc/pam.d/common-password-access
+-rw-r--r-- root/root      1208 2016-03-08 07:01 ./etc/pam.d/common-account-access
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/lighttpd/
+-rw-r--r-- root/root     11533 2016-03-08 07:01 ./etc/lighttpd/ops-lighttpd.conf
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/
+-rw-r--r-- root/root       524 2016-03-08 07:01 ./etc/openswitch/platform/COPYING
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/OpenSwitch/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/OpenSwitch/Appliance/
+-rw-r--r-- root/root       941 2016-03-08 07:01 ./etc/openswitch/platform/OpenSwitch/Appliance/devices.yaml
+-rw-r--r-- root/root      2262 2016-03-08 07:01 ./etc/openswitch/platform/OpenSwitch/Appliance/ports.yaml
+-rw-r--r-- root/root      1590 2016-03-08 07:01 ./etc/openswitch/platform/OpenSwitch/Appliance/manifest.yaml
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/Generic-x86/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/Generic-x86/X86-64/
+-rw-r--r-- root/root     21437 2016-03-08 07:01 ./etc/openswitch/platform/Generic-x86/X86-64/devices.yaml
+-rw-r--r-- root/root     65441 2016-03-08 07:01 ./etc/openswitch/platform/Generic-x86/X86-64/ports.yaml
+-rw-r--r-- root/root      1623 2016-03-08 07:01 ./etc/openswitch/platform/Generic-x86/X86-64/manifest.yaml
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/Accton/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS6712-32X/
+-rw-r--r-- root/root     14923 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS6712-32X/devices.yaml
+-rw-r--r-- root/root      6055 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS6712-32X/fans.yaml
+-rw-r--r-- root/root     75270 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS6712-32X/ports.yaml
+-rw-r--r-- root/root      4638 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS6712-32X/thermal.yaml
+-rw-r--r-- root/root      1204 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS6712-32X/leds.yaml
+-rw-r--r-- root/root      1893 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS6712-32X/manifest.yaml
+-rw-r--r-- root/root      1729 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS6712-32X/power.yaml
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS5712-54X/
+-rw-r--r-- root/root     21418 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS5712-54X/devices.yaml
+-rw-r--r-- root/root      6017 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS5712-54X/fans.yaml
+-rw-r--r-- root/root     73994 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS5712-54X/ports.yaml
+-rw-r--r-- root/root      4276 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS5712-54X/thermal.yaml
+-rwxr-xr-x root/root   1090560 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS5712-54X/bufmond.yaml
+-rw-r--r-- root/root      1169 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS5712-54X/leds.yaml
+-rw-r--r-- root/root      1876 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS5712-54X/manifest.yaml
+-rw-r--r-- root/root      1698 2016-03-08 07:01 ./etc/openswitch/platform/Accton/AS5712-54X/power.yaml
+-rw-r--r-- root/root      1141 2016-03-08 07:01 ./etc/openswitch/platform/README.md
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F/
+-rw-r--r-- root/root     25074 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F/devices.yaml
+-rw-r--r-- root/root      8415 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F/fans.yaml
+-rw-r--r-- root/root     83740 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F/ports.yaml
+-rw-r--r-- root/root      2875 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F/thermal.yaml
+-rw-r--r-- root/root      1541 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F/leds.yaml
+-rw-r--r-- root/root      1921 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F/manifest.yaml
+-rw-r--r-- root/root      1929 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F/power.yaml
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F-PROTO/
+-rw-r--r-- root/root     25868 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F-PROTO/devices.yaml
+-rw-r--r-- root/root      8135 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F-PROTO/fans.yaml
+-rw-r--r-- root/root     83740 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F-PROTO/ports.yaml
+-rw-r--r-- root/root      3687 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F-PROTO/thermal.yaml
+-rw-r--r-- root/root      1569 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F-PROTO/leds.yaml
+-rw-r--r-- root/root      1921 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F-PROTO/manifest.yaml
+-rw-r--r-- root/root      1921 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNH60A0-320F-PROTO/power.yaml
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNX60A0-486F/
+-rw-r--r-- root/root     27771 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNX60A0-486F/devices.yaml
+-rw-r--r-- root/root      7839 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNX60A0-486F/fans.yaml
+-rw-r--r-- root/root     68199 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNX60A0-486F/ports.yaml
+-rw-r--r-- root/root      2876 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNX60A0-486F/thermal.yaml
+-rw-r--r-- root/root      1559 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNX60A0-486F/leds.yaml
+-rw-r--r-- root/root      1921 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNX60A0-486F/manifest.yaml
+-rw-r--r-- root/root      2005 2016-03-08 07:01 ./etc/openswitch/platform/Alphanetworks/SNX60A0-486F/power.yaml
+-rw-r--r-- root/root      3312 2016-03-08 07:01 ./etc/openswitch/platform/DESIGN.md
+-rw-r--r-- root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/NEWS
+-rw-r--r-- root/root         0 2016-03-08 07:01 ./etc/openswitch/platform/FAQ.md
+-rw-r--r-- root/root        28 2016-03-08 07:01 ./etc/openswitch/platform/AUTHORS
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/ssl/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/ssl/certs/
+-rw-r--r-- root/root      1164 2016-03-08 07:01 ./etc/ssl/certs/server.crt
+-rw-r--r-- root/root      1679 2016-03-08 07:01 ./etc/ssl/certs/server-private.key
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/raddb/
+-rw-r--r-- root/root         0 2016-03-08 07:01 ./etc/raddb/server
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/ops/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./etc/ops/sysctl.d/
+-rw-r--r-- root/root       394 2016-03-08 07:01 ./etc/ops/sysctl.d/ops-vrf-sysctl-unset.conf
+-rw-r--r-- root/root       390 2016-03-08 07:01 ./etc/ops/sysctl.d/ops-vrf-sysctl-set.conf
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./lib/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./lib/systemd/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./lib/systemd/system/
+-rw-r--r-- root/root       473 2016-03-08 07:01 ./lib/systemd/system/switchd_bcm.service
+-rw-r--r-- root/root       426 2016-03-08 07:01 ./lib/systemd/system/ops-portd.service
+-rw-r--r-- root/root       419 2016-03-08 07:01 ./lib/systemd/system/ops-vland.service
+-rw-r--r-- root/root       450 2016-03-08 07:01 ./lib/systemd/system/aaautils.service
+-rw-r--r-- root/root       214 2016-03-08 07:01 ./lib/systemd/system/ops-init.service
+-rw-r--r-- root/root       426 2016-03-08 07:01 ./lib/systemd/system/ops-tempd.service
+-rw-r--r-- root/root       421 2016-03-08 07:01 ./lib/systemd/system/ops-pmd.service
+-rw-r--r-- root/root       246 2016-03-08 07:01 ./lib/systemd/system/ops-webui.service
+-rw-r--r-- root/root       441 2016-03-08 07:01 ./lib/systemd/system/ops-powerd.service
+-rw-r--r-- root/root       429 2016-03-08 07:01 ./lib/systemd/system/ops-sysd.service
+-rw-r--r-- root/root       308 2016-03-08 07:01 ./lib/systemd/system/cfgd.service
+-rw-r--r-- root/root       438 2016-03-08 07:01 ./lib/systemd/system/ops-arpmgrd.service
+-rw-r--r-- root/root       428 2016-03-08 07:01 ./lib/systemd/system/ops-intfd.service
+-rw-r--r-- root/root       415 2016-03-08 07:01 ./lib/systemd/system/ops-ledd.service
+-rw-r--r-- root/root       300 2016-03-08 07:01 ./lib/systemd/system/restd.service
+-rw-r--r-- root/root       415 2016-03-08 07:01 ./lib/systemd/system/ops-fand.service
+-rw-r--r-- root/root      1087 2016-03-08 07:01 ./lib/systemd/system/ovsdb-server.service
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./srv/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./srv/www/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./srv/www/static/
+-rw-r--r-- root/root     42604 2016-03-08 07:01 ./srv/www/static/97f470af840a800c1dafc3c57f77cd86.woff
+-rw-r--r-- root/root     47036 2016-03-08 07:01 ./srv/www/static/94154318f08fb502fbae08e2b03dd6bc.woff
+-rw-r--r-- root/root   2783966 2016-03-08 07:01 ./srv/www/static/bundle.js
+-rw-r--r-- root/root   3107564 2016-03-08 07:01 ./srv/www/static/bundle.js.map
+-rw-r--r-- root/root     47556 2016-03-08 07:01 ./srv/www/static/bfc5396aae319a9275f14edf94e2ca9c.woff
+-rw-r--r-- root/root     47156 2016-03-08 07:01 ./srv/www/static/e6245abdc5797c2cadf89ea4110b766e.woff
+-rw-r--r-- root/root      1126 2016-03-08 07:01 ./srv/www/static/index.html
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./srv/www/api/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./srv/www/api/images/
+-rwxr-xr-x root/root       645 2016-03-08 07:01 ./srv/www/api/images/favicon-16x16.png
+-rw-r--r-- root/root       824 2016-03-08 07:01 ./srv/www/api/images/pet_store_api.png
+-rwxr-xr-x root/root      5430 2016-03-08 07:01 ./srv/www/api/images/favicon.ico
+-rw-r--r-- root/root       770 2016-03-08 07:01 ./srv/www/api/images/logo_small.png
+-rw-r--r-- root/root      9257 2016-03-08 07:01 ./srv/www/api/images/throbber.gif
+-rwxr-xr-x root/root      1654 2016-03-08 07:01 ./srv/www/api/images/favicon-32x32.png
+-rw-r--r-- root/root      5763 2016-03-08 07:01 ./srv/www/api/images/explorer_icons.png
+-rw-r--r-- root/root       980 2016-03-08 07:01 ./srv/www/api/images/wordnik_api.png
+-rw-r--r-- root/root       449 2016-03-08 07:01 ./srv/www/api/o2c.html
+-rw-r--r-- root/root   1800348 2016-03-08 07:01 ./srv/www/api/ops-restapi.json
+-rw-r--r-- root/root    250075 2016-03-08 07:01 ./srv/www/api/swagger-ui.min.js
+-rw-r--r-- root/root   1544150 2016-03-08 07:01 ./srv/www/api/swagger-ui.js
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./srv/www/api/lib/
+-rw-r--r-- root/root     48517 2016-03-08 07:01 ./srv/www/api/lib/handlebars-2.0.0.js
+-rw-r--r-- root/root     92555 2016-03-08 07:01 ./srv/www/api/lib/jquery-1.8.0.min.js
+-rw-r--r-- root/root     15626 2016-03-08 07:01 ./srv/www/api/lib/underscore-min.js
+-rw-r--r-- root/root       369 2016-03-08 07:01 ./srv/www/api/lib/jquery.slideto.min.js
+-rw-r--r-- root/root      8900 2016-03-08 07:01 ./srv/www/api/lib/swagger-oauth.js
+-rw-r--r-- root/root      7499 2016-03-08 07:01 ./srv/www/api/lib/highlight.7.3.pack.js
+-rw-r--r-- root/root       762 2016-03-08 07:01 ./srv/www/api/lib/jquery.wiggle.min.js
+-rw-r--r-- root/root     27479 2016-03-08 07:01 ./srv/www/api/lib/underscore-min.map
+-rw-r--r-- root/root      4119 2016-03-08 07:01 ./srv/www/api/lib/jquery.ba-bbq.min.js
+-rw-r--r-- root/root     28156 2016-03-08 07:01 ./srv/www/api/lib/marked.js
+-rw-r--r-- root/root     20390 2016-03-08 07:01 ./srv/www/api/lib/backbone-min.js
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./srv/www/api/fonts/
+-rw-r--r-- root/root     39069 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-regular.ttf
+-rw-r--r-- root/root     25992 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-700.woff
+-rw-r--r-- root/root     40513 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-700.ttf
+-rw-r--r-- root/root     73575 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-700.svg
+-rw-r--r-- root/root     22922 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-700.eot
+-rw-r--r-- root/root     11304 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-regular.woff2
+-rw-r--r-- root/root     72148 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-regular.svg
+-rw-r--r-- root/root     22008 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-regular.eot
+-rw-r--r-- root/root     11480 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-700.woff2
+-rw-r--r-- root/root     24868 2016-03-08 07:01 ./srv/www/api/fonts/droid-sans-v6-latin-regular.woff
+-rw-r--r-- root/root      3387 2016-03-08 07:01 ./srv/www/api/index.html
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./srv/www/api/css/
+-rw-r--r-- root/root      1066 2016-03-08 07:01 ./srv/www/api/css/reset.css
+-rw-r--r-- root/root     40953 2016-03-08 07:01 ./srv/www/api/css/print.css
+-rw-r--r-- root/root      1474 2016-03-08 07:01 ./srv/www/api/css/typography.css
+-rw-r--r-- root/root     43042 2016-03-08 07:01 ./srv/www/api/css/screen.css
+
+
+=====================================
+==
+== Contents of ./openvswitch-common_2.3.90-1_amd64.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/include/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/include/ovs/
+-rw-r--r-- root/root      3761 2016-03-08 06:58 ./usr/include/ovs/poll-loop.h
+-rw-r--r-- root/root      1458 2016-03-08 06:58 ./usr/include/ovs/rstp-state-machines.h
+-rw-r--r-- root/root      1417 2016-03-08 06:58 ./usr/include/ovs/guarded-list.h
+-rw-r--r-- root/root      2334 2016-03-08 06:58 ./usr/include/ovs/timeval.h
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/include/ovs/ofproto/
+-rw-r--r-- root/root     25763 2016-03-08 06:58 ./usr/include/ovs/ofproto/ofproto.h
+-rw-r--r-- root/root     82609 2016-03-08 06:58 ./usr/include/ovs/ofproto/ofproto-provider.h
+-rw-r--r-- root/root      5076 2016-03-08 06:58 ./usr/include/ovs/ofproto/bond.h
+-rw-r--r-- root/root      1860 2016-03-08 06:58 ./usr/include/ovs/ofproto/fail-open.h
+-rw-r--r-- root/root      2127 2016-03-08 06:58 ./usr/include/ovs/ofproto/tunnel.h
+-rw-r--r-- root/root      1941 2016-03-08 06:58 ./usr/include/ovs/ofproto/netflow.h
+-rw-r--r-- root/root     14342 2016-03-08 06:58 ./usr/include/ovs/odp-util.h
+-rw-r--r-- root/root      1699 2016-03-08 06:58 ./usr/include/ovs/fat-rwlock.h
+-rw-r--r-- root/root      1861 2016-03-08 06:58 ./usr/include/ovs/syslog-provider.h
+-rw-r--r-- root/root       860 2016-03-08 06:58 ./usr/include/ovs/lockfile.h
+-rw-r--r-- root/root       994 2016-03-08 06:58 ./usr/include/ovs/netdev-linux.h
+-rw-r--r-- root/root      1297 2016-03-08 06:58 ./usr/include/ovs/pcap-file.h
+-rw-r--r-- root/root      1635 2016-03-08 06:58 ./usr/include/ovs/process.h
+-rw-r--r-- root/root      3599 2016-03-08 06:58 ./usr/include/ovs/ovs-numa.h
+-rw-r--r-- root/root      1660 2016-03-08 06:58 ./usr/include/ovs/memory.h
+-rw-r--r-- root/root      3519 2016-03-08 06:58 ./usr/include/ovs/sset.h
+-rw-r--r-- root/root      1573 2016-03-08 06:58 ./usr/include/ovs/unicode.h
+-rw-r--r-- root/root      2805 2016-03-08 06:58 ./usr/include/ovs/uuid.h
+-rw-r--r-- root/root      4677 2016-03-08 06:58 ./usr/include/ovs/socket-util.h
+-rw-r--r-- root/root      9904 2016-03-08 06:58 ./usr/include/ovs/cmap.h
+-rw-r--r-- root/root      3763 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-clang.h
+-rw-r--r-- root/root      1312 2016-03-08 06:58 ./usr/include/ovs/multipath.h
+-rw-r--r-- root/root      7416 2016-03-08 06:58 ./usr/include/ovs/mcast-snooping.h
+-rw-r--r-- root/root      3991 2016-03-08 06:58 ./usr/include/ovs/coverage.h
+-rw-r--r-- root/root      1102 2016-03-08 06:58 ./usr/include/ovs/random.h
+-rw-r--r-- root/root     13483 2016-03-08 06:58 ./usr/include/ovs/sflow_api.h
+-rw-r--r-- root/root     13266 2016-03-08 06:58 ./usr/include/ovs/netlink-socket.h
+-rw-r--r-- root/root       916 2016-03-08 06:58 ./usr/include/ovs/if-notifier.h
+-rw-r--r-- root/root      3935 2016-03-08 06:58 ./usr/include/ovs/cfm.h
+-rw-r--r-- root/root      8550 2016-03-08 06:58 ./usr/include/ovs/unaligned.h
+-rw-r--r-- root/root      2558 2016-03-08 06:58 ./usr/include/ovs/shash.h
+-rw-r--r-- root/root      3454 2016-03-08 06:58 ./usr/include/ovs/stream.h
+-rw-r--r-- root/root      3400 2016-03-08 06:58 ./usr/include/ovs/smap.h
+-rw-r--r-- root/root      2241 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-c11.h
+-rw-r--r-- root/root      8954 2016-03-08 06:58 ./usr/include/ovs/db-ctl-base.h
+-rw-r--r-- root/root     14530 2016-03-08 06:58 ./usr/include/ovs/rculist.h
+-rw-r--r-- root/root      1857 2016-03-08 06:58 ./usr/include/ovs/netlink-notifier.h
+-rw-r--r-- root/root       791 2016-03-08 06:58 ./usr/include/ovs/connectivity.h
+-rw-r--r-- root/root      5169 2016-03-08 06:58 ./usr/include/ovs/reconnect.h
+-rw-r--r-- root/root       743 2016-03-08 06:58 ./usr/include/ovs/syslog-direct.h
+-rw-r--r-- root/root      1293 2016-03-08 06:58 ./usr/include/ovs/latch.h
+-rw-r--r-- root/root     11325 2016-03-08 06:58 ./usr/include/ovs/ovsdb-data.h
+-rw-r--r-- root/root      1596 2016-03-08 06:58 ./usr/include/ovs/netlink-conntrack.h
+-rw-r--r-- root/root      1286 2016-03-08 06:58 ./usr/include/ovs/jhash.h
+-rw-r--r-- root/root      1146 2016-03-08 06:58 ./usr/include/ovs/sat-math.h
+-rw-r--r-- root/root     33259 2016-03-08 06:58 ./usr/include/ovs/rstp-common.h
+-rw-r--r-- root/root     19417 2016-03-08 06:58 ./usr/include/ovs/dpif-provider.h
+-rw-r--r-- root/root      1664 2016-03-08 06:58 ./usr/include/ovs/fatal-signal.h
+-rw-r--r-- root/root      4682 2016-03-08 06:58 ./usr/include/ovs/seq.h
+-rw-r--r-- root/root      9622 2016-03-08 06:58 ./usr/include/ovs/ovs-rcu.h
+-rw-r--r-- root/root       759 2016-03-08 06:58 ./usr/include/ovs/dhparams.h
+-rw-r--r-- root/root     25066 2016-03-08 06:58 ./usr/include/ovs/ovs-thread.h
+-rw-r--r-- root/root      2538 2016-03-08 06:58 ./usr/include/ovs/backtrace.h
+-rw-r--r-- root/root      4188 2016-03-08 06:58 ./usr/include/ovs/rconn.h
+-rw-r--r-- root/root      5431 2016-03-08 06:58 ./usr/include/ovs/heap.h
+-rw-r--r-- root/root       778 2016-03-08 06:58 ./usr/include/ovs/crc32c.h
+-rw-r--r-- root/root     37923 2016-03-08 06:58 ./usr/include/ovs/flow.h
+-rw-r--r-- root/root      1701 2016-03-08 06:58 ./usr/include/ovs/bundle.h
+-rw-r--r-- root/root      4445 2016-03-08 06:58 ./usr/include/ovs/json.h
+-rw-r--r-- root/root      3542 2016-03-08 06:58 ./usr/include/ovs/ovsdb-idl-provider.h
+-rw-r--r-- root/root     10249 2016-03-08 06:58 ./usr/include/ovs/match.h
+-rw-r--r-- root/root       945 2016-03-08 06:58 ./usr/include/ovs/signals.h
+-rw-r--r-- root/root     34893 2016-03-08 06:58 ./usr/include/ovs/netdev-provider.h
+-rw-r--r-- root/root      8591 2016-03-08 06:58 ./usr/include/ovs/ofpbuf.h
+-rw-r--r-- root/root      2015 2016-03-08 06:58 ./usr/include/ovs/stream-ssl.h
+-rw-r--r-- root/root      1784 2016-03-08 06:58 ./usr/include/ovs/ofp-print.h
+-rw-r--r-- root/root      1923 2016-03-08 06:58 ./usr/include/ovs/bfd.h
+-rw-r--r-- root/root      7830 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-gcc4+.h
+-rw-r--r-- root/root      8025 2016-03-08 06:58 ./usr/include/ovs/bitmap.h
+-rw-r--r-- root/root     23275 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic.h
+-rw-r--r-- root/root      2762 2016-03-08 06:58 ./usr/include/ovs/ovsdb-error.h
+-rw-r--r-- root/root     23537 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-i586.h
+-rw-r--r-- root/root      1347 2016-03-08 06:58 ./usr/include/ovs/compiler.h
+-rw-r--r-- root/root      2078 2016-03-08 06:58 ./usr/include/ovs/async-append.h
+-rw-r--r-- root/root      6808 2016-03-08 06:58 ./usr/include/ovs/hindex.h
+-rw-r--r-- root/root      1139 2016-03-08 06:58 ./usr/include/ovs/netdev-dpdk.h
+-rw-r--r-- root/root     13428 2016-03-08 06:58 ./usr/include/ovs/hmap.h
+-rw-r--r-- root/root      2109 2016-03-08 06:58 ./usr/include/ovs/csum.h
+-rw-r--r-- root/root      1443 2016-03-08 06:58 ./usr/include/ovs/geneve.h
+-rw-r--r-- root/root       721 2016-03-08 06:58 ./usr/include/ovs/syslog-libc.h
+-rw-r--r-- root/root      9408 2016-03-08 06:58 ./usr/include/ovs/list.h
+-rw-r--r-- root/root    384923 2016-03-08 06:58 ./usr/include/ovs/vswitch-idl.h
+-rw-r--r-- root/root      1187 2016-03-08 06:58 ./usr/include/ovs/tnl-neigh-cache.h
+-rw-r--r-- root/root     29663 2016-03-08 06:58 ./usr/include/ovs/ofp-msgs.h
+-rw-r--r-- root/root     19266 2016-03-08 06:58 ./usr/include/ovs/util.h
+-rw-r--r-- root/root     17453 2016-03-08 06:58 ./usr/include/ovs/dp-packet.h
+-rw-r--r-- root/root     17854 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-msvc.h
+-rw-r--r-- root/root      6215 2016-03-08 06:58 ./usr/include/ovs/nx-match.h
+-rw-r--r-- root/root      1171 2016-03-08 06:58 ./usr/include/ovs/id-pool.h
+-rw-r--r-- root/root      2613 2016-03-08 06:58 ./usr/include/ovs/svec.h
+-rw-r--r-- root/root      1522 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-flag-gcc4.7+.h
+-rw-r--r-- root/root      1306 2016-03-08 06:58 ./usr/include/ovs/plugins.h
+-rw-r--r-- root/root      8151 2016-03-08 06:58 ./usr/include/ovs/vconn-provider.h
+-rw-r--r-- root/root     11562 2016-03-08 06:58 ./usr/include/ovs/config.h
+-rw-r--r-- root/root     31614 2016-03-08 06:58 ./usr/include/ovs/packets.h
+-rw-r--r-- root/root      4058 2016-03-08 06:58 ./usr/include/ovs/perf-counter.h
+-rw-r--r-- root/root      1621 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-locked.h
+-rw-r--r-- root/root      4265 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-pthreads.h
+-rw-r--r-- root/root      1822 2016-03-08 06:58 ./usr/include/ovs/vlandev.h
+-rw-r--r-- root/root     25982 2016-03-08 06:58 ./usr/include/ovs/ofp-errors.h
+-rw-r--r-- root/root      6456 2016-03-08 06:58 ./usr/include/ovs/stp.h
+-rw-r--r-- root/root      4852 2016-03-08 06:58 ./usr/include/ovs/netlink-protocol.h
+-rw-r--r-- root/root      1830 2016-03-08 06:58 ./usr/include/ovs/timer.h
+-rw-r--r-- root/root      2018 2016-03-08 06:58 ./usr/include/ovs/dpif-netlink.h
+-rw-r--r-- root/root      9949 2016-03-08 06:58 ./usr/include/ovs/mac-learning.h
+-rw-r--r-- root/root      5023 2016-03-08 06:58 ./usr/include/ovs/ct-dpif.h
+-rw-r--r-- root/root      1149 2016-03-08 06:58 ./usr/include/ovs/tnl-ports.h
+-rw-r--r-- root/root      2203 2016-03-08 06:58 ./usr/include/ovs/simap.h
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/include/ovs/openvswitch/
+-rw-r--r-- root/root      4794 2016-03-08 06:58 ./usr/include/ovs/openvswitch/thread.h
+-rw-r--r-- root/root      4482 2016-03-08 06:58 ./usr/include/ovs/openvswitch/types.h
+-rw-r--r-- root/root      8608 2016-03-08 06:58 ./usr/include/ovs/openvswitch/compiler.h
+-rw-r--r-- root/root       933 2016-03-08 06:58 ./usr/include/ovs/openvswitch/list.h
+-rw-r--r-- root/root      1780 2016-03-08 06:58 ./usr/include/ovs/openvswitch/util.h
+-rw-r--r-- root/root     13312 2016-03-08 06:58 ./usr/include/ovs/openvswitch/vlog.h
+-rw-r--r-- root/root       918 2016-03-08 06:58 ./usr/include/ovs/openvswitch/version.h
+-rw-r--r-- root/root      3361 2016-03-08 06:58 ./usr/include/ovs/openvswitch/vconn.h
+-rw-r--r-- root/root      1512 2016-03-08 06:58 ./usr/include/ovs/openvswitch/token-bucket.h
+-rw-r--r-- root/root      1388 2016-03-08 06:58 ./usr/include/ovs/learn.h
+-rw-r--r-- root/root      3259 2016-03-08 06:58 ./usr/include/ovs/ovsdb-parser.h
+-rw-r--r-- root/root      3612 2016-03-08 06:58 ./usr/include/ovs/lacp.h
+-rw-r--r-- root/root      8406 2016-03-08 06:58 ./usr/include/ovs/ovsdb-types.h
+-rw-r--r-- root/root     16429 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-x86_64.h
+-rw-r--r-- root/root      1950 2016-03-08 06:58 ./usr/include/ovs/type-props.h
+-rw-r--r-- root/root      1913 2016-03-08 06:58 ./usr/include/ovs/unixctl.h
+-rw-r--r-- root/root      1491 2016-03-08 06:58 ./usr/include/ovs/dummy.h
+-rw-r--r-- root/root      4784 2016-03-08 06:58 ./usr/include/ovs/openswitch-dflt.h
+-rw-r--r-- root/root      1030 2016-03-08 06:58 ./usr/include/ovs/route-table.h
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/include/ovs/openflow/
+-rw-r--r-- root/root     19924 2016-03-08 06:58 ./usr/include/ovs/openflow/openflow-1.3.h
+-rw-r--r-- root/root      2640 2016-03-08 06:58 ./usr/include/ovs/openflow/netronome-ext.h
+-rw-r--r-- root/root     17258 2016-03-08 06:58 ./usr/include/ovs/openflow/openflow-common.h
+-rw-r--r-- root/root     29061 2016-03-08 06:58 ./usr/include/ovs/openflow/openflow-1.1.h
+-rw-r--r-- root/root     10993 2016-03-08 06:58 ./usr/include/ovs/openflow/openflow-1.2.h
+-rw-r--r-- root/root     18931 2016-03-08 06:58 ./usr/include/ovs/openflow/openflow-1.4.h
+-rw-r--r-- root/root     19562 2016-03-08 06:58 ./usr/include/ovs/openflow/openflow-1.0.h
+-rw-r--r-- root/root     45155 2016-03-08 06:58 ./usr/include/ovs/openflow/nicira-ext.h
+-rw-r--r-- root/root      7858 2016-03-08 06:58 ./usr/include/ovs/openflow/openflow-1.5.h
+-rw-r--r-- root/root       929 2016-03-08 06:58 ./usr/include/ovs/openflow/openflow.h
+-rw-r--r-- root/root     23324 2016-03-08 06:58 ./usr/include/ovs/sflow.h
+-rw-r--r-- root/root      1519 2016-03-08 06:58 ./usr/include/ovs/odp-execute.h
+-rw-r--r-- root/root      6797 2016-03-08 06:58 ./usr/include/ovs/tun-metadata.h
+-rw-r--r-- root/root      4371 2016-03-08 06:58 ./usr/include/ovs/ofp-parse.h
+-rw-r--r-- root/root      9974 2016-03-08 06:58 ./usr/include/ovs/rstp.h
+-rw-r--r-- root/root      2531 2016-03-08 06:58 ./usr/include/ovs/rtnetlink.h
+-rw-r--r-- root/root     12240 2016-03-08 06:58 ./usr/include/ovs/ovsdb-idl.h
+-rw-r--r-- root/root      2002 2016-03-08 06:58 ./usr/include/ovs/command-line.h
+-rw-r--r-- root/root      2200 2016-03-08 06:58 ./usr/include/ovs/hmapx.h
+-rw-r--r-- root/root     55341 2016-03-08 06:58 ./usr/include/ovs/ofp-util.h
+-rw-r--r-- root/root      1169 2016-03-08 06:58 ./usr/include/ovs/ovs-router.h
+-rw-r--r-- root/root      2502 2016-03-08 06:58 ./usr/include/ovs/learning-switch.h
+-rw-r--r-- root/root      1806 2016-03-08 06:58 ./usr/include/ovs/netdev-vport.h
+-rw-r--r-- root/root     38340 2016-03-08 06:58 ./usr/include/ovs/dpif.h
+-rw-r--r-- root/root      1718 2016-03-08 06:58 ./usr/include/ovs/dpctl.h
+-rw-r--r-- root/root      1375 2016-03-08 06:58 ./usr/include/ovs/dpif-netdev.h
+-rw-r--r-- root/root       757 2016-03-08 06:58 ./usr/include/ovs/entropy.h
+-rw-r--r-- root/root       832 2016-03-08 06:58 ./usr/include/ovs/sort.h
+-rw-r--r-- root/root      3333 2016-03-08 06:58 ./usr/include/ovs/dynamic-string.h
+-rw-r--r-- root/root     34132 2016-03-08 06:58 ./usr/include/ovs/openswitch-idl.h
+-rw-r--r-- root/root      8652 2016-03-08 06:58 ./usr/include/ovs/pvector.h
+-rw-r--r-- root/root      2683 2016-03-08 06:58 ./usr/include/ovs/sha1.h
+-rw-r--r-- root/root      1815 2016-03-08 06:58 ./usr/include/ovs/byteq.h
+-rw-r--r-- root/root      1170 2016-03-08 06:58 ./usr/include/ovs/aes128.h
+-rw-r--r-- root/root      5349 2016-03-08 06:58 ./usr/include/ovs/jsonrpc.h
+-rw-r--r-- root/root      3401 2016-03-08 06:58 ./usr/include/ovs/netflow.h
+-rw-r--r-- root/root      3533 2016-03-08 06:58 ./usr/include/ovs/bufmon-provider.h
+-rw-r--r-- root/root     36463 2016-03-08 06:58 ./usr/include/ovs/ofp-actions.h
+-rw-r--r-- root/root      1949 2016-03-08 06:58 ./usr/include/ovs/rtbsd.h
+-rw-r--r-- root/root      9630 2016-03-08 06:58 ./usr/include/ovs/netlink.h
+-rw-r--r-- root/root      3756 2016-03-08 06:58 ./usr/include/ovs/ovs-atomic-gcc4.7+.h
+-rw-r--r-- root/root      3432 2016-03-08 06:58 ./usr/include/ovs/ovs-lldp.h
+-rw-r--r-- root/root     22665 2016-03-08 06:58 ./usr/include/ovs/classifier.h
+-rw-r--r-- root/root      1975 2016-03-08 06:58 ./usr/include/ovs/dhcp.h
+-rw-r--r-- root/root      1314 2016-03-08 06:58 ./usr/include/ovs/stream-fd.h
+-rw-r--r-- root/root      6603 2016-03-08 06:58 ./usr/include/ovs/daemon.h
+-rw-r--r-- root/root      1006 2016-03-08 06:58 ./usr/include/ovs/ofp-version-opt.h
+-rw-r--r-- root/root     66647 2016-03-08 06:58 ./usr/include/ovs/meta-flow.h
+-rw-r--r-- root/root      7873 2016-03-08 06:58 ./usr/include/ovs/stream-provider.h
+-rw-r--r-- root/root     10010 2016-03-08 06:58 ./usr/include/ovs/hash.h
+-rw-r--r-- root/root      4295 2016-03-08 06:58 ./usr/include/ovs/table.h
+-rw-r--r-- root/root      1664 2016-03-08 06:58 ./usr/include/ovs/vlan-bitmap.h
+-rw-r--r-- root/root     31021 2016-03-08 06:58 ./usr/include/ovs/odp-netlink.h
+-rw-r--r-- root/root     13289 2016-03-08 06:58 ./usr/include/ovs/netdev.h
+-rw-r--r-- root/root      3954 2016-03-08 06:58 ./usr/include/ovs/byte-order.h
+-rw-r--r-- root/root      1068 2016-03-08 06:58 ./usr/include/ovs/dirs.h
+-rw-r--r-- root/root       780 2016-03-08 06:58 ./usr/include/ovs/valgrind.h
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/man/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/man/man8/
+-rw-r--r-- root/root     38192 2016-03-08 06:58 ./usr/share/man/man8/ovs-ofctl.8.gz
+-rw-r--r-- root/root      2864 2016-03-08 06:58 ./usr/share/man/man8/ovs-pki.8.gz
+-rw-r--r-- root/root      3796 2016-03-08 06:58 ./usr/share/man/man8/ovs-appctl.8.gz
+-rw-r--r-- root/root       493 2016-03-08 06:58 ./usr/share/man/man8/ovs-parse-backtrace.8.gz
+-rw-r--r-- root/root      1168 2016-03-08 06:58 ./usr/share/man/man8/ovs-bugtool.8.gz
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/man/man1/
+-rw-r--r-- root/root      6766 2016-03-08 06:58 ./usr/share/man/man1/ovsdb-client.1.gz
+-rw-r--r-- root/root      3681 2016-03-08 06:58 ./usr/share/man/man1/ovsdb-tool.1.gz
+-rw-r--r-- root/root      3985 2016-03-08 06:58 ./usr/share/man/man1/ovs-benchmark.1.gz
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/doc/openvswitch-common/
+-rw-r--r-- root/root     13839 2016-03-08 06:52 ./usr/share/doc/openvswitch-common/changelog.Debian.gz
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/openvswitch/
+-rw-r--r-- root/root      1274 2016-03-08 06:58 ./usr/share/openvswitch/dhcp_leases.xml
+-rw-r--r-- root/root       511 2016-03-08 06:58 ./usr/share/openvswitch/configdb.ovsschema
+-rw-r--r-- root/root    204381 2016-03-08 06:58 ./usr/share/openvswitch/vswitch.xml
+-rw-r--r-- root/root      1675 2016-03-08 06:58 ./usr/share/openvswitch/dhcp_leases.ovsschema
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/lib/
+-rw-r--r-- root/root     31896 2016-03-08 06:58 ./usr/lib/libsflow.a
+-rw-r--r-- root/root    528400 2016-03-08 06:58 ./usr/lib/libovscommon.so.1.0.0
+-rw-r--r-- root/root   1763710 2016-03-08 06:58 ./usr/lib/libovsdb.a
+-rw-r--r-- root/root      1009 2016-03-08 06:57 ./usr/lib/libovsdb.la
+-rw-r--r-- root/root   1818892 2016-03-08 06:58 ./usr/lib/libopenvswitch.a
+-rw-r--r-- root/root    702670 2016-03-08 06:58 ./usr/lib/libofproto.a
+-rw-r--r-- root/root    985060 2016-03-08 06:58 ./usr/lib/libovscommon.a
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/lib/pkgconfig/
+-rw-r--r-- root/root       229 2016-03-08 06:58 ./usr/lib/pkgconfig/libsflow.pc
+-rw-r--r-- root/root       229 2016-03-08 06:58 ./usr/lib/pkgconfig/libovsdb.pc
+-rw-r--r-- root/root       230 2016-03-08 06:58 ./usr/lib/pkgconfig/libopenvswitch.pc
+-rw-r--r-- root/root       234 2016-03-08 06:58 ./usr/lib/pkgconfig/libofproto.pc
+-rw-r--r-- root/root       237 2016-03-08 06:58 ./usr/lib/pkgconfig/libovscommon.pc
+-rw-r--r-- root/root       969 2016-03-08 06:57 ./usr/lib/libsflow.la
+-rw-r--r-- root/root      1012 2016-03-08 06:57 ./usr/lib/libovscommon.la
+-rw-r--r-- root/root      1072 2016-03-08 06:57 ./usr/lib/libopenvswitch.la
+-rw-r--r-- root/root    474160 2016-03-08 06:58 ./usr/lib/libofproto.so.1.0.0
+-rw-r--r-- root/root   1141680 2016-03-08 06:58 ./usr/lib/libopenvswitch.so.1.0.0
+-rw-r--r-- root/root      1004 2016-03-08 06:57 ./usr/lib/libofproto.la
+-rw-r--r-- root/root    904920 2016-03-08 06:58 ./usr/lib/libovsdb.so.1.0.0
+-rw-r--r-- root/root     30856 2016-03-08 06:58 ./usr/lib/libsflow.so.1.0.0
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/sbin/
+-rwxr-xr-x root/root    105992 2016-03-08 06:58 ./usr/sbin/ops-switchd
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/bin/
+-rwxr-xr-x root/root      2854 2016-03-08 06:58 ./usr/bin/ovs-parse-backtrace
+-rwxr-xr-x root/root      8064 2016-03-08 06:57 ./usr/bin/ovs-docker
+-rwxr-xr-x root/root     14533 2016-03-08 06:57 ./usr/bin/ovs-pki
+-rwxr-xr-x root/root     10424 2016-03-08 06:58 ./usr/bin/ovs-appctl
+-rwxr-xr-x root/root     35904 2016-03-08 06:58 ./usr/bin/ovsdb-client
+-rwxr-xr-x root/root     18688 2016-03-08 06:58 ./usr/bin/ovs-benchmark
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./var/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./var/log/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./var/log/openvswitch/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./var/run/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./var/run/openvswitch/
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/share/doc/openvswitch-common/INSTALL.DPDK.md -> /home/root/OpenSwitchGitHub/alphanetworks-branch/ops-debian/src/ops-openvswitch/INSTALL.DPDK.md
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/share/doc/openvswitch-common/README-native-tunneling.md -> /home/root/OpenSwitchGitHub/alphanetworks-branch/ops-debian/src/ops-openvswitch/README-native-tunneling.md
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/share/doc/openvswitch-common/FAQ.md -> /home/root/OpenSwitchGitHub/alphanetworks-branch/ops-debian/src/ops-openvswitch/FAQ.md
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libopenvswitch.so.1 -> libopenvswitch.so.1.0.0
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libsflow.so -> libsflow.so.1.0.0
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libofproto.so.1 -> libofproto.so.1.0.0
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libovscommon.so.1 -> libovscommon.so.1.0.0
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libofproto.so -> libofproto.so.1.0.0
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libovscommon.so -> libovscommon.so.1.0.0
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libovsdb.so.1 -> libovsdb.so.1.0.0
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libovsdb.so -> libovsdb.so.1.0.0
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libsflow.so.1 -> libsflow.so.1.0.0
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/lib/libopenvswitch.so -> libopenvswitch.so.1.0.0
+
+
+=====================================
+==
+== Contents of ./openvswitch-switch_2.3.90-1_amd64.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/man/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/man/man5/
+-rw-r--r-- root/root     57426 2016-03-08 06:58 ./usr/share/man/man5/ovs-vswitchd.conf.db.5.gz
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/man/man8/
+-rw-r--r-- root/root     14368 2016-03-08 06:58 ./usr/share/man/man8/ovs-vswitchd.8.gz
+-rw-r--r-- root/root      5019 2016-03-08 06:58 ./usr/share/man/man8/ovs-ctl.8.gz
+-rw-r--r-- root/root      1839 2016-03-08 06:58 ./usr/share/man/man8/ovs-dpctl-top.8.gz
+-rw-r--r-- root/root     17528 2016-03-08 06:58 ./usr/share/man/man8/ovs-vsctl.8.gz
+-rw-r--r-- root/root      5306 2016-03-08 06:58 ./usr/share/man/man8/ovs-dpctl.8.gz
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/man/man1/
+-rw-r--r-- root/root       478 2016-03-08 06:58 ./usr/share/man/man1/ovs-pcap.1.gz
+-rw-r--r-- root/root       595 2016-03-08 06:58 ./usr/share/man/man1/ovs-tcpundump.1.gz
+-rw-r--r-- root/root      1836 2016-03-08 06:58 ./usr/share/man/man1/ovs-vlan-test.1.gz
+-rw-r--r-- root/root      9256 2016-03-08 06:58 ./usr/share/man/man1/ovsdb-server.1.gz
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/doc/openvswitch-switch/
+-rw-r--r-- root/root     13839 2016-03-08 06:52 ./usr/share/doc/openvswitch-switch/changelog.Debian.gz
+-rw-r--r-- root/root      2465 2016-03-08 06:52 ./usr/share/doc/openvswitch-switch/README.Debian.gz
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/openvswitch/
+-rw-r--r-- root/root    164263 2016-03-08 06:58 ./usr/share/openvswitch/vswitch.ovsschema
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/openvswitch/scripts/
+-rwxr-xr-x root/root      2980 2016-03-08 06:58 ./usr/share/openvswitch/scripts/ovs-check-dead-ifs
+-rw-r--r-- root/root     12252 2016-03-08 06:58 ./usr/share/openvswitch/scripts/ovs-lib
+-rwxr-xr-x root/root     22031 2016-03-08 06:58 ./usr/share/openvswitch/scripts/ovs-ctl
+-rwxr-xr-x root/root      4883 2016-03-08 06:58 ./usr/share/openvswitch/scripts/ovs-save
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/share/openvswitch/switch/
+-rw-r--r-- root/root       296 2016-03-08 06:58 ./usr/share/openvswitch/switch/default.template
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/sbin/
+-rwxr-xr-x root/root     40512 2016-03-08 06:58 ./usr/sbin/ovsdb-server
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./usr/bin/
+-rwxr-xr-x root/root      2155 2016-03-08 06:58 ./usr/bin/ovs-tcpundump
+-rwxr-xr-x root/root     23024 2016-03-08 06:58 ./usr/bin/ovsdb-tool
+-rwxr-xr-x root/root      3342 2016-03-08 06:58 ./usr/bin/ovs-pcap
+-rwxr-xr-x root/root     12069 2016-03-08 06:58 ./usr/bin/ovs-vlan-test
+-rwxr-xr-x root/root     61383 2016-03-08 06:58 ./usr/bin/ovs-dpctl-top
+-rwxr-xr-x root/root     66560 2016-03-08 06:58 ./usr/bin/ovs-vsctl
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./etc/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./etc/network/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./etc/network/if-pre-up.d/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./etc/network/if-post-down.d/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./etc/init.d/
+-rwxr-xr-x root/root      4432 2016-03-08 06:52 ./etc/init.d/openvswitch-switch
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./etc/openvswitch/
+drwxr-xr-x root/root         0 2016-03-08 06:58 ./etc/logrotate.d/
+-rw-r--r-- root/root       396 2016-03-08 06:58 ./etc/logrotate.d/openvswitch-switch
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./usr/share/openvswitch/scripts/ifupdown.sh -> /home/root/OpenSwitchGitHub/alphanetworks-branch/ops-debian/src/ops-openvswitch/debian/ifupdown.sh
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./etc/network/if-pre-up.d/openvswitch -> /usr/share/openvswitch/scripts/ifupdown.sh
+lrwxrwxrwx root/root         0 2016-03-08 06:58 ./etc/network/if-post-down.d/openvswitch -> /usr/share/openvswitch/scripts/ifupdown.sh
+
+
+=====================================
+==
+== Contents of ./ops-arpmgrd-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     44144 2016-03-08 06:57 ./usr/bin/ops-arpmgrd
+
+
+=====================================
+==
+== Contents of ./ops-cli_0.1.0-1_amd64.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/ops-cli/
+-rw-r--r-- root/root       136 2016-03-08 06:51 ./usr/share/doc/ops-cli/changelog.gz
+-rw-r--r-- root/root       153 2016-03-08 06:51 ./usr/share/doc/ops-cli/changelog.Debian.gz
+-rw-r--r-- root/root      1696 2016-03-08 06:56 ./usr/share/doc/ops-cli/copyright
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+-rw-r--r-- root/root    487840 2016-03-08 06:57 ./usr/lib/libzebra_cli.so.0.0.0
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root    995168 2016-03-08 06:57 ./usr/bin/vtysh
+lrwxrwxrwx root/root         0 2016-03-08 06:57 ./usr/lib/libzebra_cli.so.0 -> libzebra_cli.so.0.0.0
+
+
+=====================================
+==
+== Contents of ./ops-cli-dev_0.1.0-1_amd64.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/include/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/include/vtysh/
+-rw-r--r-- root/root      2130 2016-03-08 06:57 ./usr/include/vtysh/vtysh_ovsdb_if.h
+-rw-r--r-- root/root      1439 2016-03-08 06:57 ./usr/include/vtysh/pqueue.h
+-rw-r--r-- root/root      8182 2016-03-08 06:57 ./usr/include/vtysh/thread.h
+-rw-r--r-- root/root      4283 2016-03-08 06:57 ./usr/include/vtysh/workqueue.h
+-rw-r--r-- root/root      3266 2016-03-08 06:57 ./usr/include/vtysh/libospf.h
+-rw-r--r-- root/root      3973 2016-03-08 06:57 ./usr/include/vtysh/sockunion.h
+-rw-r--r-- root/root       163 2016-03-08 06:57 ./usr/include/vtysh/checksum.h
+-rw-r--r-- root/root      3230 2016-03-08 06:57 ./usr/include/vtysh/memory.h
+-rw-r--r-- root/root      1440 2016-03-08 06:57 ./usr/include/vtysh/network.h
+-rw-r--r-- root/root      7424 2016-03-08 06:57 ./usr/include/vtysh/prefix.h
+-rw-r--r-- root/root      2600 2016-03-08 06:57 ./usr/include/vtysh/privs.h
+-rw-r--r-- root/root      7994 2016-03-08 06:57 ./usr/include/vtysh/log.h
+-rw-r--r-- root/root      1643 2016-03-08 06:57 ./usr/include/vtysh/sigevent.h
+-rw-r--r-- root/root      8621 2016-03-08 06:57 ./usr/include/vtysh/stream.h
+-rw-r--r-- root/root      4911 2016-03-08 06:57 ./usr/include/vtysh/linklist.h
+-rw-r--r-- root/root      1605 2016-03-08 06:57 ./usr/include/vtysh/jhash.h
+-rw-r--r-- root/root      1764 2016-03-08 06:57 ./usr/include/vtysh/filter.h
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/include/vtysh/utils/
+-rw-r--r-- root/root      1054 2016-03-08 06:57 ./usr/include/vtysh/utils/system_vtysh_utils.h
+-rw-r--r-- root/root      3659 2016-03-08 06:57 ./usr/include/vtysh/smux.h
+-rw-r--r-- root/root      1932 2016-03-08 06:57 ./usr/include/vtysh/vty_utils.h
+-rw-r--r-- root/root     23165 2016-03-08 06:57 ./usr/include/vtysh/config.h
+-rw-r--r-- root/root      5261 2016-03-08 06:57 ./usr/include/vtysh/getopt.h
+-rw-r--r-- root/root       639 2016-03-08 06:57 ./usr/include/vtysh/str.h
+-rw-r--r-- root/root      6063 2016-03-08 06:57 ./usr/include/vtysh/vtysh.h
+-rw-r--r-- root/root      5670 2016-03-08 06:57 ./usr/include/vtysh/zclient.h
+-rw-r--r-- root/root      1472 2016-03-08 06:57 ./usr/include/vtysh/keychain.h
+-rw-r--r-- root/root     11288 2016-03-08 06:57 ./usr/include/vtysh/if.h
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/include/vtysh/lib/
+-rw-r--r-- root/root      4979 2016-03-08 06:57 ./usr/include/vtysh/lib/memtypes.h
+-rw-r--r-- root/root      1629 2016-03-08 06:57 ./usr/include/vtysh/lib/version.h
+-rw-r--r-- root/root     11552 2016-03-08 06:57 ./usr/include/vtysh/lib/route_types.h
+-rw-r--r-- root/root      2216 2016-03-08 06:57 ./usr/include/vtysh/vector.h
+-rw-r--r-- root/root      3961 2016-03-08 06:57 ./usr/include/vtysh/sockopt.h
+-rw-r--r-- root/root      4175 2016-03-08 06:57 ./usr/include/vtysh/plist.h
+-rw-r--r-- root/root      1433 2016-03-08 06:57 ./usr/include/vtysh/zassert.h
+-rw-r--r-- root/root      1884 2016-03-08 06:57 ./usr/include/vtysh/distribute.h
+-rw-r--r-- root/root      6006 2016-03-08 06:57 ./usr/include/vtysh/routemap.h
+-rw-r--r-- root/root      4114 2016-03-08 06:57 ./usr/include/vtysh/buffer.h
+-rw-r--r-- root/root      3050 2016-03-08 06:57 ./usr/include/vtysh/md5.h
+-rw-r--r-- root/root      3927 2016-03-08 06:57 ./usr/include/vtysh/vtysh_utils.h
+-rw-r--r-- root/root      7662 2016-03-08 06:57 ./usr/include/vtysh/vtysh_ovsdb_config.h
+-rw-r--r-- root/root      1372 2016-03-08 06:57 ./usr/include/vtysh/if_rmap.h
+-rw-r--r-- root/root       930 2016-03-08 06:57 ./usr/include/vtysh/vtysh_user.h
+-rw-r--r-- root/root      8900 2016-03-08 06:57 ./usr/include/vtysh/vty.h
+-rw-r--r-- root/root      2252 2016-03-08 06:57 ./usr/include/vtysh/hash.h
+-rw-r--r-- root/root      6207 2016-03-08 06:57 ./usr/include/vtysh/table.h
+-rw-r--r-- root/root      1243 2016-03-08 06:57 ./usr/include/vtysh/lib_vtysh_ovsdb_if.h
+-rw-r--r-- root/root     26417 2016-03-08 06:57 ./usr/include/vtysh/command.h
+-rw-r--r-- root/root     16590 2016-03-08 06:57 ./usr/include/vtysh/zebra.h
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/ops-cli-dev/
+-rw-r--r-- root/root        74 2016-03-08 06:51 ./usr/share/doc/ops-cli-dev/NEWS.gz
+-rw-r--r-- root/root       136 2016-03-08 06:51 ./usr/share/doc/ops-cli-dev/changelog.gz
+-rw-r--r-- root/root      2013 2016-03-08 06:51 ./usr/share/doc/ops-cli-dev/INSTALL.quagga.txt.gz
+-rw-r--r-- root/root       456 2016-03-08 06:51 ./usr/share/doc/ops-cli-dev/TODO
+-rw-r--r-- root/root       202 2016-03-08 06:56 ./usr/share/doc/ops-cli-dev/README.Debian
+-rw-r--r-- root/root       153 2016-03-08 06:51 ./usr/share/doc/ops-cli-dev/changelog.Debian.gz
+-rw-r--r-- root/root      1125 2016-03-08 06:51 ./usr/share/doc/ops-cli-dev/README.NetBSD
+-rw-r--r-- root/root      1696 2016-03-08 06:56 ./usr/share/doc/ops-cli-dev/copyright
+-rw-r--r-- root/root      1390 2016-03-08 06:51 ./usr/share/doc/ops-cli-dev/README.md
+-rw-r--r-- root/root       398 2016-03-08 06:51 ./usr/share/doc/ops-cli-dev/README
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/pkgconfig/
+-rw-r--r-- root/root       209 2016-03-08 06:57 ./usr/lib/pkgconfig/ops-cli.pc
+-rw-r--r-- root/root    763670 2016-03-08 06:57 ./usr/lib/libzebra_cli.a
+lrwxrwxrwx root/root         0 2016-03-08 06:57 ./usr/lib/libzebra_cli.so -> libzebra_cli.so.0.0.0
+
+
+=====================================
+==
+== Contents of ./ops-fand-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/cli/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/cli/plugins/
+-rw-r--r-- root/root     13288 2016-03-08 06:57 ./usr/lib/cli/plugins/libfan_cli.so
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     49032 2016-03-08 06:57 ./usr/bin/ops-fand
+
+
+=====================================
+==
+== Contents of ./ops-intfd-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     56472 2016-03-08 06:57 ./usr/bin/ops-intfd
+
+
+=====================================
+==
+== Contents of ./ops-ledd-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/cli/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/cli/plugins/
+-rw-r--r-- root/root     12736 2016-03-08 06:57 ./usr/lib/cli/plugins/libled_cli.so
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     43640 2016-03-08 06:57 ./usr/bin/ops-ledd
+
+
+=====================================
+==
+== Contents of ./ops-pmd-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     62720 2016-03-08 06:57 ./usr/bin/ops-pmd
+
+
+=====================================
+==
+== Contents of ./ops-portd-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     93272 2016-03-08 06:57 ./usr/bin/ops-portd
+
+
+=====================================
+==
+== Contents of ./ops-powerd-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/cli/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/cli/plugins/
+-rw-r--r-- root/root     11112 2016-03-08 06:57 ./usr/lib/cli/plugins/libpower_cli.so
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     39224 2016-03-08 06:57 ./usr/bin/ops-powerd
+
+
+=====================================
+==
+== Contents of ./ops-sysd-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     62320 2016-03-08 06:57 ./usr/bin/ops-sysd
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./etc/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./etc/openswitch/
+-rw-r--r-- root/root       482 2016-03-08 06:57 ./etc/openswitch/image.manifest
+
+
+=====================================
+==
+== Contents of ./ops-tempd-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/cli/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/cli/plugins/
+-rw-r--r-- root/root     12512 2016-03-08 06:57 ./usr/lib/cli/plugins/libtemp_cli.so
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     42336 2016-03-08 06:57 ./usr/bin/ops-tempd
+
+
+=====================================
+==
+== Contents of ./opsutils-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/include/
+lrwxrwxrwx root/root         0 2016-03-08 06:57 ./usr/include/vrf-utils.h -> /home/root/OpenSwitchGitHub/alphanetworks-branch/ops-debian/src/ops-utils/include/vrf-utils.h
+lrwxrwxrwx root/root         0 2016-03-08 06:57 ./usr/include/ops-utils.h -> /home/root/OpenSwitchGitHub/alphanetworks-branch/ops-debian/src/ops-utils/include/ops-utils.h
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+-rw-r--r-- root/root     10712 2016-03-08 06:57 ./usr/lib/libopsutils.so.0.1.0
+lrwxrwxrwx root/root         0 2016-03-08 06:57 ./usr/lib/libopsutils.so -> libopsutils.so.0.1.0
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/pkgconfig/
+-rw-r--r-- root/root       892 2016-03-08 06:57 ./usr/lib/pkgconfig/opsutils.pc
+
+
+=====================================
+==
+== Contents of ./ops-vland-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root     40824 2016-03-08 06:57 ./usr/bin/ops-vland
+
+
+=====================================
+==
+== Contents of ./ovs_bcm_plugin-0.1.1-Linux.deb
+
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/openvswitch/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/openvswitch/plugins/
+-rw-r--r-- root/root    245576 2016-03-08 07:01 ./usr/lib/openvswitch/plugins/libovs_bcm_plugin.so
+
+
+=====================================
+==
+== Contents of ./python-backports-abc_0.4-1_all.deb
+
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/python-backports-abc/
+-rw-r--r-- root/root       174 2016-03-08 07:01 ./usr/share/doc/python-backports-abc/changelog.Debian.gz
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/
+-rw-r--r-- root/root      5277 2015-09-14 03:41 ./usr/lib/python2.7/dist-packages/backports_abc.py
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/backports_abc-0.4.egg-info/
+-rw-r--r-- root/root       227 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/backports_abc-0.4.egg-info/SOURCES.txt
+-rw-r--r-- root/root        14 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/backports_abc-0.4.egg-info/top_level.txt
+-rw-r--r-- root/root      3383 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/backports_abc-0.4.egg-info/PKG-INFO
+-rw-r--r-- root/root         1 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/backports_abc-0.4.egg-info/dependency_links.txt
+
+
+=====================================
+==
+== Contents of ./python-certifi_2016.02.28-1_all.deb
+
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/python-certifi/
+-rw-r--r-- root/root       166 2016-03-08 07:01 ./usr/share/doc/python-certifi/changelog.Debian.gz
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/certifi-2016.02.28.egg-info/
+-rw-r--r-- root/root       286 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/certifi-2016.02.28.egg-info/SOURCES.txt
+-rw-r--r-- root/root         8 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/certifi-2016.02.28.egg-info/top_level.txt
+-rw-r--r-- root/root      2901 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/certifi-2016.02.28.egg-info/PKG-INFO
+-rw-r--r-- root/root         1 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/certifi-2016.02.28.egg-info/dependency_links.txt
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/certifi/
+-rw-r--r-- root/root       716 2015-09-05 23:24 ./usr/lib/python2.7/dist-packages/certifi/core.py
+-rw-r--r-- root/root    313446 2016-02-28 09:26 ./usr/lib/python2.7/dist-packages/certifi/cacert.pem
+-rw-r--r-- root/root        41 2015-04-23 14:12 ./usr/lib/python2.7/dist-packages/certifi/__main__.py
+-rw-r--r-- root/root        63 2016-02-28 09:31 ./usr/lib/python2.7/dist-packages/certifi/__init__.py
+-rw-r--r-- root/root    339072 2016-02-28 09:31 ./usr/lib/python2.7/dist-packages/certifi/weak.pem
+-rw-r--r-- root/root     25626 2015-11-30 06:11 ./usr/lib/python2.7/dist-packages/certifi/old_root.pem
+
+
+=====================================
+==
+== Contents of ./python-inflect_0.2.5-1_all.deb
+
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/python-inflect/
+-rw-r--r-- root/root       990 2014-07-08 14:09 ./usr/share/doc/python-inflect/changelog.gz
+-rw-r--r-- root/root       166 2016-03-08 07:01 ./usr/share/doc/python-inflect/changelog.Debian.gz
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/inflect-0.2.5.egg-info/
+-rw-r--r-- root/root       542 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/inflect-0.2.5.egg-info/SOURCES.txt
+-rw-r--r-- root/root         8 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/inflect-0.2.5.egg-info/top_level.txt
+-rw-r--r-- root/root     61303 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/inflect-0.2.5.egg-info/PKG-INFO
+-rw-r--r-- root/root         1 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/inflect-0.2.5.egg-info/dependency_links.txt
+-rw-r--r-- root/root    100739 2015-01-09 15:07 ./usr/lib/python2.7/dist-packages/inflect.py
+
+
+=====================================
+==
+== Contents of ./python-ops-aaautilspamcfg_1.0-1_all.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/python-ops-aaautilspamcfg/
+-rw-r--r-- root/root       158 2016-03-08 06:57 ./usr/share/doc/python-ops-aaautilspamcfg/changelog.Debian.gz
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/
+-rw-r--r-- root/root      1653 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/cookiesecret.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_aaautilspamcfg-1.0.egg-info/
+-rw-r--r-- root/root       298 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_aaautilspamcfg-1.0.egg-info/SOURCES.txt
+-rw-r--r-- root/root        55 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_aaautilspamcfg-1.0.egg-info/top_level.txt
+-rw-r--r-- root/root       190 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_aaautilspamcfg-1.0.egg-info/PKG-INFO
+-rw-r--r-- root/root         1 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_aaautilspamcfg-1.0.egg-info/dependency_links.txt
+-rw-r--r-- root/root        99 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_aaautilspamcfg-1.0.egg-info/entry_points.txt
+-rw-r--r-- root/root      7434 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/autoprovision.py
+-rw-r--r-- root/root     17435 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/ops_aaautilspamcfg.py
+-rw-r--r-- root/root      3193 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/userauth.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root       351 2016-03-08 06:57 ./usr/bin/ops_aaautilspamcfg
+-rwxr-xr-x root/root       341 2016-03-08 06:57 ./usr/bin/autoprovision
+
+
+=====================================
+==
+== Contents of ./python-ops-cfgd_1.0-1_all.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/python-ops-cfgd/
+-rw-r--r-- root/root       152 2016-03-08 06:57 ./usr/share/doc/python-ops-cfgd/changelog.Debian.gz
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/
+-rw-r--r-- root/root     10692 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/ops_cfgd.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_cfgd-1.0.egg-info/
+-rw-r--r-- root/root       215 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_cfgd-1.0.egg-info/SOURCES.txt
+-rw-r--r-- root/root        25 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_cfgd-1.0.egg-info/top_level.txt
+-rw-r--r-- root/root       180 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_cfgd-1.0.egg-info/PKG-INFO
+-rw-r--r-- root/root         1 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_cfgd-1.0.egg-info/dependency_links.txt
+-rw-r--r-- root/root        71 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/ops_cfgd-1.0.egg-info/entry_points.txt
+-rw-r--r-- root/root      5387 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/cfgdb.py
+-rw-r--r-- root/root      8155 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/cfgdbutil.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root       301 2016-03-08 06:57 ./usr/bin/ops_cfgd
+-rwxr-xr-x root/root       303 2016-03-08 06:57 ./usr/bin/cfgdbutil
+
+
+=====================================
+==
+== Contents of ./python-restd_1.0-1_all.deb
+
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/share/doc/python-restd/
+-rw-r--r-- root/root       149 2016-03-08 06:57 ./usr/share/doc/python-restd/changelog.Debian.gz
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/restd-1.0.egg-info/
+-rw-r--r-- root/root      1305 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/restd-1.0.egg-info/SOURCES.txt
+-rw-r--r-- root/root        44 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/restd-1.0.egg-info/top_level.txt
+-rw-r--r-- root/root       177 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/restd-1.0.egg-info/PKG-INFO
+-rw-r--r-- root/root         1 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/restd-1.0.egg-info/dependency_links.txt
+-rw-r--r-- root/root        38 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/restd-1.0.egg-info/entry_points.txt
+-rw-r--r-- root/root      1128 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/restd.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/opslib/
+-rw-r--r-- root/root         0 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opslib/__init__.py
+-rw-r--r-- root/root     25038 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opslib/restparser.py
+-rw-r--r-- root/root     46559 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opslib/apidocgen.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/opsvalidator/
+-rw-r--r-- root/root       869 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsvalidator/error.py
+-rw-r--r-- root/root         0 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsvalidator/__init__.py
+-rw-r--r-- root/root      2808 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsvalidator/validator.py
+-rw-r--r-- root/root      1601 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsvalidator/base.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/runconfig/
+-rw-r--r-- root/root     24272 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/runconfig/declarativeconfig.py
+-rw-r--r-- root/root         0 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/runconfig/__init__.py
+-rw-r--r-- root/root      1065 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/runconfig/settings.py
+-rw-r--r-- root/root      1397 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/runconfig/runconfig.py
+-rw-r--r-- root/root      3224 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/runconfig/startupconfig.py
+-rw-r--r-- root/root      3361 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/runconfig/validatoradapter.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/opsrest/
+-rw-r--r-- root/root      2092 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/exceptions.py
+-rw-r--r-- root/root      2414 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/application.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/opsrest/custom/
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/opsrest/custom/schemas/
+-rw-r--r-- root/root       835 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/custom/schemas/User.json
+-rw-r--r-- root/root         0 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/custom/__init__.py
+-rw-r--r-- root/root      2320 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/custom/schemavalidator.py
+-rw-r--r-- root/root      3218 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/custom/restobject.py
+-rw-r--r-- root/root      4694 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/custom/uservalidator.py
+-rw-r--r-- root/root      9719 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/custom/usercontroller.py
+-rw-r--r-- root/root      2593 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/custom/basecontroller.py
+-rw-r--r-- root/root     11569 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/patch.py
+-rw-r--r-- root/root      8117 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/parse.py
+-rw-r--r-- root/root      1190 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/urls.py
+-rw-r--r-- root/root      3955 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/put.py
+-rw-r--r-- root/root     29499 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/verify.py
+-rw-r--r-- root/root      1427 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/transaction.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/opsrest/utils/
+-rw-r--r-- root/root      1766 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/utils/userutils.py
+-rw-r--r-- root/root         0 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/utils/__init__.py
+-rw-r--r-- root/root      2137 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/utils/auditlogutils.py
+-rw-r--r-- root/root     21788 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/utils/utils.py
+-rw-r--r-- root/root     18047 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/utils/getutils.py
+-rw-r--r-- root/root         0 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/__init__.py
+-rw-r--r-- root/root      1692 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/settings.py
+-rw-r--r-- root/root      3885 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/post.py
+-rw-r--r-- root/root     13805 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/get.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/lib/python2.7/dist-packages/opsrest/handlers/
+-rw-r--r-- root/root      3305 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/handlers/config.py
+-rw-r--r-- root/root      4757 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/handlers/customrest.py
+-rw-r--r-- root/root      1760 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/handlers/login.py
+-rw-r--r-- root/root         0 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/handlers/__init__.py
+-rw-r--r-- root/root     11225 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/handlers/ovsdbapi.py
+-rw-r--r-- root/root      6523 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/handlers/base.py
+-rw-r--r-- root/root      4280 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/manager.py
+-rw-r--r-- root/root      1765 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/resource.py
+-rw-r--r-- root/root      2245 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/delete.py
+-rw-r--r-- root/root      3073 2016-03-08 06:51 ./usr/lib/python2.7/dist-packages/opsrest/constants.py
+drwxr-xr-x root/root         0 2016-03-08 06:57 ./usr/bin/
+-rwxr-xr-x root/root       286 2016-03-08 06:57 ./usr/bin/restd
+
+
+=====================================
+==
+== Contents of ./python-tornado_4.3-1_amd64.deb
+
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/share/doc/python-tornado/
+-rw-r--r-- root/root       166 2016-03-08 07:01 ./usr/share/doc/python-tornado/changelog.Debian.gz
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado-4.3.egg-info/
+-rw-r--r-- root/root      5956 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado-4.3.egg-info/SOURCES.txt
+-rw-r--r-- root/root         8 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado-4.3.egg-info/top_level.txt
+-rw-r--r-- root/root      2582 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado-4.3.egg-info/PKG-INFO
+-rw-r--r-- root/root        71 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado-4.3.egg-info/requires.txt
+-rw-r--r-- root/root         1 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado-4.3.egg-info/dependency_links.txt
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/
+-rw-r--r-- root/root     20852 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/options.py
+-rw-r--r-- root/root     20306 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/locale.py
+-rw-r--r-- root/root     11915 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/httpserver.py
+-rw-r--r-- root/root     11530 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/tcpserver.py
+-rw-r--r-- root/root     44093 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/gen.py
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/platform/
+-rw-r--r-- root/root       681 2015-09-29 23:54 ./usr/lib/python2.7/dist-packages/tornado/platform/windows.py
+-rw-r--r-- root/root      7648 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/platform/asyncio.py
+-rw-r--r-- root/root      3431 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/platform/kqueue.py
+-rw-r--r-- root/root      2244 2015-09-29 23:54 ./usr/lib/python2.7/dist-packages/tornado/platform/interface.py
+-rw-r--r-- root/root      3092 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/platform/caresresolver.py
+-rw-r--r-- root/root      1859 2015-09-29 23:54 ./usr/lib/python2.7/dist-packages/tornado/platform/posix.py
+-rw-r--r-- root/root      1726 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/platform/auto.py
+-rw-r--r-- root/root       934 2015-09-29 23:54 ./usr/lib/python2.7/dist-packages/tornado/platform/epoll.py
+-rw-r--r-- root/root     21586 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/platform/twisted.py
+-rw-r--r-- root/root      2634 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/platform/select.py
+-rw-r--r-- root/root         0 2015-09-29 23:54 ./usr/lib/python2.7/dist-packages/tornado/platform/__init__.py
+-rw-r--r-- root/root      3403 2015-09-29 23:54 ./usr/lib/python2.7/dist-packages/tornado/platform/common.py
+-rw-r--r-- root/root     28827 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/httputil.py
+-rw-r--r-- root/root     13605 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/util.py
+-rw-r--r-- root/root     65135 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/iostream.py
+-rw-r--r-- root/root     27632 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/testing.py
+-rw-r--r-- root/root     46438 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/auth.py
+-rw-r--r-- root/root     15234 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/locks.py
+-rw-r--r-- root/root     40820 2015-10-25 11:21 ./usr/lib/python2.7/dist-packages/tornado/websocket.py
+-rw-r--r-- root/root     10920 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/log.py
+-rw-r--r-- root/root     10013 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/queues.py
+-rw-r--r-- root/root      6802 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/tcpclient.py
+-rw-r--r-- root/root     18531 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/concurrent.py
+-rw-r--r-- root/root     23983 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/simple_httpclient.py
+-rw-r--r-- root/root     30869 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/http1connection.py
+-rw-r--r-- root/root      1122 2015-11-06 15:08 ./usr/lib/python2.7/dist-packages/tornado/__init__.py
+-rw-r--r-- root/root     14441 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/escape.py
+-rw-r--r-- root/root     41265 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/ioloop.py
+-rw-r--r-- root/root      5467 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/_locale_data.py
+-rw-r--r-- root/root     12300 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/process.py
+-rw-r--r-- root/root     12840 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/autoreload.py
+-rw-r--r-- root/root     22169 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/curl_httpclient.py
+-rw-r--r-- root/root     13174 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/stack_context.py
+-rw-r--r-- root/root     13436 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/wsgi.py
+-rw-r--r-- root/root     26738 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/httpclient.py
+-rw-r--r-- root/root    128870 2015-10-25 15:42 ./usr/lib/python2.7/dist-packages/tornado/web.py
+-rw-r--r-- root/root     35327 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/template.py
+-rw-r--r-- root/root      6176 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/speedups.so
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/test/
+-rw-r--r-- root/root     41199 2015-10-25 13:43 ./usr/lib/python2.7/dist-packages/tornado/test/httpserver_test.py
+-rw-r--r-- root/root      6681 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/util_test.py
+-rw-r--r-- root/root     44402 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/test/gen_test.py
+-rw-r--r-- root/root      3023 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/test/util.py
+-rw-r--r-- root/root     10304 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/tcpclient_test.py
+-rw-r--r-- root/root     30120 2015-10-25 15:31 ./usr/lib/python2.7/dist-packages/tornado/test/simple_httpclient_test.py
+-rw-r--r-- root/root    109353 2015-10-25 16:24 ./usr/lib/python2.7/dist-packages/tornado/test/web_test.py
+-rw-r--r-- root/root      7125 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/runtests.py
+-rw-r--r-- root/root      1361 2015-10-25 11:21 ./usr/lib/python2.7/dist-packages/tornado/test/tcpserver_test.py
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/test/gettext_translations/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/test/gettext_translations/fr_FR/
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/
+-rw-r--r-- root/root       665 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.mo
+-rw-r--r-- root/root      1049 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.po
+-rw-r--r-- root/root      4548 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/test/asyncio_test.py
+-rw-r--r-- root/root     27525 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/test/twisted_test.py
+-rw-r--r-- root/root       417 2015-09-29 23:54 ./usr/lib/python2.7/dist-packages/tornado/test/__main__.py
+-rw-r--r-- root/root     42040 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/test/iostream_test.py
+-rw-r--r-- root/root      4478 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/test/curl_httpclient_test.py
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/test/static/
+-rw-r--r-- root/root       264 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml.gz
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/test/static/dir/
+-rw-r--r-- root/root        18 2015-08-08 15:01 ./usr/lib/python2.7/dist-packages/tornado/test/static/dir/index.html
+-rw-r--r-- root/root        26 2014-04-12 19:53 ./usr/lib/python2.7/dist-packages/tornado/test/static/robots.txt
+-rw-r--r-- root/root       666 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml
+-rw-r--r-- root/root       285 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml.bz2
+-rw-r--r-- root/root      7630 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/test/netutil_test.py
+-rw-r--r-- root/root        49 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/options_test.cfg
+-rw-r--r-- root/root       851 2014-04-12 19:53 ./usr/lib/python2.7/dist-packages/tornado/test/test.crt
+-rw-r--r-- root/root        95 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/static_foo.txt
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/test/templates/
+-rw-r--r-- root/root         7 2014-04-12 19:53 ./usr/lib/python2.7/dist-packages/tornado/test/templates/utf8.html
+-rw-r--r-- root/root         0 2015-09-29 23:54 ./usr/lib/python2.7/dist-packages/tornado/test/__init__.py
+-rw-r--r-- root/root     11102 2015-09-29 23:54 ./usr/lib/python2.7/dist-packages/tornado/test/stack_context_test.py
+-rw-r--r-- root/root       916 2014-04-12 19:53 ./usr/lib/python2.7/dist-packages/tornado/test/test.key
+-rw-r--r-- root/root     18558 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/template_test.py
+-rw-r--r-- root/root      9696 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/log_test.py
+-rw-r--r-- root/root     10058 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/options_test.py
+-rw-r--r-- root/root     10569 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/process_test.py
+-rw-r--r-- root/root     13359 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/httputil_test.py
+-rw-r--r-- root/root       521 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/resolve_test_helper.py
+drwxr-xr-x root/root         0 2016-03-08 07:01 ./usr/lib/python2.7/dist-packages/tornado/test/csv_translations/
+-rw-r--r-- root/root        18 2014-04-12 19:53 ./usr/lib/python2.7/dist-packages/tornado/test/csv_translations/fr_FR.csv
+-rw-r--r-- root/root      8732 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/test/testing_test.py
+-rw-r--r-- root/root     14781 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/websocket_test.py
+-rw-r--r-- root/root     11251 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/escape_test.py
+-rw-r--r-- root/root     16076 2015-10-25 11:21 ./usr/lib/python2.7/dist-packages/tornado/test/locks_test.py
+-rw-r--r-- root/root     13390 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/concurrent_test.py
+-rw-r--r-- root/root     26340 2015-10-25 12:56 ./usr/lib/python2.7/dist-packages/tornado/test/httpclient_test.py
+-rw-r--r-- root/root      5923 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/locale_test.py
+-rw-r--r-- root/root     22535 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/auth_test.py
+-rw-r--r-- root/root     13062 2015-10-25 11:21 ./usr/lib/python2.7/dist-packages/tornado/test/queues_test.py
+-rw-r--r-- root/root      3714 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/test/wsgi_test.py
+-rw-r--r-- root/root     24243 2015-10-24 18:50 ./usr/lib/python2.7/dist-packages/tornado/test/ioloop_test.py
+-rw-r--r-- root/root      1531 2015-10-24 09:05 ./usr/lib/python2.7/dist-packages/tornado/test/import_test.py
+-rw-r--r-- root/root     20437 2015-10-25 11:59 ./usr/lib/python2.7/dist-packages/tornado/netutil.py

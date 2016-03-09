@@ -1,0 +1,102 @@
+#!/bin/bash
+# set -x
+set -e
+
+SNAP=`pwd`
+OPSNAME=openswitch
+OPS=$SNAP/$OPSNAME
+VSWITCHD=$OPS/src/ops-openvswitch/vswitchd
+SCHEMA=$OPS/src/ops/schema
+WEBUI=$OPS/src/ops-webui
+
+if [ ! -e $SNAP/snapcraft.yaml ] ; then
+    echo "You should be in your snap directory when you run this script."
+    exit 1
+fi
+
+# Dependencies for setup
+
+sudo apt-get -y install python2.7 libi2c-dev libgtest-dev
+
+# Get the Openswitch src
+if [ ! -d $OPS ] ; then
+    git clone https://github.com/mabnhdev/ops-debian.git $OPSNAME
+    make -C $OPS checkout-all
+fi
+
+# Openswitch source from alphanetworks branch
+
+if [ ! -d $OPS ] ; then
+    git clone https://github.com/mabnhdev/ops-debian.git $OPSNAME
+    git checkout alphanetworks
+    make -C $OPS checkout-all
+fi
+
+# Openswitch OVSDB schema
+
+if [ ! -f $VSWITCHD/dhcp_leases.ovsschema ] ; then
+    python $SCHEMA/sanitize.py $SCHEMA/dhcp_leases.extschema $VSWITCHD/dhcp_leases.ovsschema
+fi
+if [ ! -f $VSWITCHD/vswitch.ovsschema ] ; then
+    python $SCHEMA/sanitize.py $SCHEMA/vswitch.extschema $VSWITCHD/vswitch.ovsschema
+fi
+if [ ! -f $VSWITCHD/configdb.ovsschema ] ; then
+    cp $SCHEMA/configdb.ovsschema $VSWITCHD/configdb.ovsschema
+fi
+if [ ! -f $VSWITCHD/vswitch.ovsschema ] ; then
+    cp $SCHEMA/vswitch.ovsschema $VSWITCHD/vswitch.ovsschema
+fi
+if [ ! -f $VSWITCHD/vswitch.xml ] ; then
+    cp $SCHEMA/*.xml $VSWITCHD/
+fi
+
+# OpenEmbedded compatability
+
+if [ ! -e /usr/include/linux/i2c-dev-user.h ] ; then
+    sudo ln -s /usr/include/linux/i2c-dev.h /usr/include/linux/i2c-dev-user.h
+fi
+
+# libgtest install
+
+if [ ! -f /usr/lib/libgtest.so ] ; then
+    cd /usr/src/gtest
+    sudo cmake . -DBUILD_SHARED_LIBS=ON
+    sudo make
+    sudo mv *.so /usr/lib
+    sudo unlink /usr/lib/libgtest.so.1 > /dev/null || true
+    sudo unlink /usr/lib/libgtest.so.1.7.0 > /dev/null || true
+    sudo unlink /usr/lib/libgtest_main.so.1 > /dev/null || true
+    sudo unlink /usr/lib/libgtest_main.so.1.7.0 > /dev/null || true
+    sudo ln -s /usr/lib/libgtest.so /usr/lib/libgtest.so.1.7.0
+    sudo ln -s /usr/lib/libgtest.so.1.7.0 /usr/lib/libgtest.so.1
+    sudo ln -s /usr/lib/libgtest_main.so /usr/lib/libgtest_main.so.1.7.0
+    sudo ln -s /usr/lib/libgtest_main.so.1.7.0 /usr/lib/libgtest_main.so.1
+    cd -
+fi
+
+if [ ! -f /usr/lib/pkgconfig/gtest.pc ] ; then
+(cat <<EOF 
+prefix=/user
+exec_prefix=/usr
+libdir=\${prefix}/lib
+includedir=\${prefix}/include/gtest
+
+Name: gtest
+Description: Google test harness for C++.
+Version: 1.7.0
+Requires:
+Libs: -L\${libdir} -lgtest
+Cflags: -I\${includedir}
+
+EOF
+) > gtest.pc
+sudo mv ./gtest.pc /usr/lib/pkgconfig
+sudo chown root:root /usr/lib/pkgconfig/gtest.pc
+sudo chmod 644 /usr/lib/pkgconfig/gtest.pc
+fi
+
+# WebUI
+
+if [ ! -d $WEBUI/node-modules ] ; then
+    cd $WEBUI && ./tools/scripts/extract-node-tars
+fi
