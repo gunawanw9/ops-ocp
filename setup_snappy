@@ -16,7 +16,7 @@ fi
 
 # Dependencies for setup
 
-sudo apt-get -y install python2.7 libi2c-dev libgtest-dev
+sudo apt-get -y install python2.7 libi2c-dev libgtest-dev cmake build-essential git 
 
 # Get the Openswitch src
 if [ ! -d $OPS ] ; then
