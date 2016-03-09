@@ -78,6 +78,7 @@ parts:
       - "--enable-shared"
     source: ./openswitch/src/ops-cli
     after: [ openvswitch, fixup-ops-openvswitch-libs ]
+    build-packages: [ libreadline-dev, pkg-config ]
 
   ops-aaa-utils:
     plugin: python2
