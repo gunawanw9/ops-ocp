@@ -56,45 +56,6 @@ if [ ! -e /usr/include/linux/i2c-dev-user.h ] ; then
     sudo ln -s /usr/include/linux/i2c-dev.h /usr/include/linux/i2c-dev-user.h
 fi
 
-# libgtest install
-
-if [ ! -f /usr/lib/libgtest.so ] ; then
-    cd /usr/src/gtest
-    sudo cmake . -DBUILD_SHARED_LIBS=ON
-    sudo make
-    sudo mv *.so /usr/lib
-    sudo unlink /usr/lib/libgtest.so.1 > /dev/null || true
-    sudo unlink /usr/lib/libgtest.so.1.7.0 > /dev/null || true
-    sudo unlink /usr/lib/libgtest_main.so.1 > /dev/null || true
-    sudo unlink /usr/lib/libgtest_main.so.1.7.0 > /dev/null || true
-    sudo ln -s /usr/lib/libgtest.so /usr/lib/libgtest.so.1.7.0
-    sudo ln -s /usr/lib/libgtest.so.1.7.0 /usr/lib/libgtest.so.1
-    sudo ln -s /usr/lib/libgtest_main.so /usr/lib/libgtest_main.so.1.7.0
-    sudo ln -s /usr/lib/libgtest_main.so.1.7.0 /usr/lib/libgtest_main.so.1
-    cd -
-fi
-
-if [ ! -f /usr/lib/pkgconfig/gtest.pc ] ; then
-(cat <<EOF 
-prefix=/user
-exec_prefix=/usr
-libdir=\${prefix}/lib
-includedir=\${prefix}/include/gtest
-
-Name: gtest
-Description: Google test harness for C++.
-Version: 1.7.0
-Requires:
-Libs: -L\${libdir} -lgtest
-Cflags: -I\${includedir}
-
-EOF
-) > gtest.pc
-sudo mv ./gtest.pc /usr/lib/pkgconfig
-sudo chown root:root /usr/lib/pkgconfig/gtest.pc
-sudo chmod 644 /usr/lib/pkgconfig/gtest.pc
-fi
-
 # WebUI
 
 if [ ! -d $WEBUI/node_modules ] ; then
