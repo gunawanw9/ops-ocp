@@ -2,7 +2,7 @@ name: openswitch
 version: 0.1.0
 summary: OpenSwitch Network Operating System
 description: A standalone version of OpenSwitch from openswitch.net
-icon: ./openswitch/src/ops-webui/tools/reference/img/OpenSwitchLogo.png
+icon: openswitch/src/ops-webui/tools/reference/img/OpenSwitchLogo.png
 
 apps:
   ops-sysd:
@@ -50,41 +50,20 @@ parts:
     source: ./openswitch/src/ops-utils
     after: [ openvswitch ]
 
+  gtest:
+    plugin: cmake
+    source: https://github.com/lool/googletest.git
+    source-type: git
+
   ops-config-yaml:
     plugin: cmake
     source: ./openswitch/src/ops-config-yaml
+    after: [gtest]
     build-packages:
         # if [ ! -e /usr/include/linux/i2c-dev-user.h ] ; then
         #   sudo ln -s /usr/include/linux/i2c-dev.h /usr/include/linux/i2c-dev-user.h
         # fi
       - libyaml-cpp0.3-dev
-      - libgtest-dev
-        # libgtest must be built and a libgtest.pc created
-        #
-        # cd /usr/src/gtest
-        # sudo cmake . -DBUILD_SHARED_LIBS=ON
-        # sudo make
-        # sudo mv *.so /usr/lib
-        # sudo ln -s /usr/lib/libgtest.so /usr/lib/libgtest.so.1.7.0 
-        # sudo ln -s /usr/lib/libgtest.so.1.7.0 /usr/lib/libgtest.so.1
-        # sudo ln -s /usr/lib/libgtest_main.so /usr/lib/libgtest_main.so.1.7.0 
-        # sudo ln -s /usr/lib/libgtest_main.so.1.7.0 /usr/lib/libgtest_main.so.1
-        # (cat <<EOF 
-        # prefix=/usr
-        # exec_prefix=\${prefix}
-        # libdir=\${prefix}/lib
-        # includedir=\${prefix}/include/gtest
-        #
-        # Name: gtest
-        # Description: Google test harness for C++.
-        # Version: 1.7.0
-        # Requires:
-        # Libs: -L\${libdir} -lgtest
-        # Cflags: -I\${includedir}
-        #
-        # EOF
-        # ) >> /tmp/gtest.pc
-        # sudo mv /tmp/gtest.pc /usr/lib/pkgconfig
       - libi2c-dev
 
   ops-cli:
