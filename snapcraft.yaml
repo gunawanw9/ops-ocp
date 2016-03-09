@@ -31,14 +31,6 @@ parts:
     build-packages:
       - libltdl-dev
 
-  # The openvswitch part generates an incorrect ./stage/usr/lib/libovsdb.la
-  # This part fixes the libovsdb.la so libtool will succeed in ops-cli.
-  fixup-ops-openvswitch-libs:
-    plugin: make
-    source: ./fixups
-    after: [ openvswitch ]
-    before: [ ops-cli ]
-
   ops-utils:
     plugin: cmake
     configflags:
@@ -77,7 +69,7 @@ parts:
       - "--enable-vtysh"
       - "--enable-shared"
     source: openswitch/src/ops-cli
-    after: [ openvswitch, fixup-ops-openvswitch-libs ]
+    after: [ openvswitch ]
     build-packages: [ libreadline-dev, pkg-config ]
 
   ops-aaa-utils:
