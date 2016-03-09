@@ -97,6 +97,6 @@ fi
 
 # WebUI
 
-if [ ! -d $WEBUI/node-modules ] ; then
+if [ ! -d $WEBUI/node_modules ] ; then
     cd $WEBUI && ./tools/scripts/extract-node-tars
 fi
