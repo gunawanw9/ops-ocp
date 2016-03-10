@@ -46,6 +46,7 @@ parts:
     plugin: cmake
     source: https://github.com/lool/googletest.git
     source-type: git
+    configflags: [ "-DBUILD_SHARED_LIBS=ON" ]
 
   i2c-header-hack:
     plugin: copy
