@@ -46,17 +46,23 @@ parts:
     plugin: cmake
     source: https://github.com/lool/googletest.git
     source-type: git
+    configflags: [ "-DBUILD_SHARED_LIBS=ON" ]
+
+  i2c-header-hack:
+    plugin: copy
+    files:
+      /usr/include/linux/i2c-dev.h: usr/include/linux/i2c-dev-user.h
+    build-packages: [ libi2c-dev ]
 
   ops-config-yaml:
     plugin: cmake
     source: openswitch/src/ops-config-yaml
-    after: [gtest]
+    after: [ gtest, i2c-header-hack ]
     build-packages:
         # if [ ! -e /usr/include/linux/i2c-dev-user.h ] ; then
         #   sudo ln -s /usr/include/linux/i2c-dev.h /usr/include/linux/i2c-dev-user.h
         # fi
       - libyaml-cpp0.3-dev
-      - libi2c-dev
 
   ops-cli:
     plugin: autotools
