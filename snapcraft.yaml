@@ -63,7 +63,6 @@ parts:
         #   sudo ln -s /usr/include/linux/i2c-dev.h /usr/include/linux/i2c-dev-user.h
         # fi
       - libyaml-cpp0.3-dev
-      - libi2c-dev
 
   ops-cli:
     plugin: autotools
