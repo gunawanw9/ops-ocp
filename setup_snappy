@@ -50,12 +50,6 @@ if [ ! -f $VSWITCHD/vswitch.xml ] ; then
     cp $SCHEMA/*.xml $VSWITCHD/
 fi
 
-# OpenEmbedded compatability
-
-if [ ! -e /usr/include/linux/i2c-dev-user.h ] ; then
-    sudo ln -s /usr/include/linux/i2c-dev.h /usr/include/linux/i2c-dev-user.h
-fi
-
 # WebUI
 
 if [ ! -d $WEBUI/node_modules ] ; then
