@@ -141,6 +141,11 @@ parts:
     source: openswitch/src/ops-pmd
     after: [ openvswitch, ops-config-yaml ]
 
+  systemd-pc-hack:
+    plugin: copy
+    files:
+      systemd.pc: usr/lib/pkgconfig/systemd.pc
+
   ops-powerd:
     plugin: cmake
     configflags:
@@ -150,7 +155,7 @@ parts:
       - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
       - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
     source: openswitch/src/ops-powerd
-    after: [ openvswitch, ops-cli, ops-config-yaml ]
+    after: [ openvswitch, ops-cli, ops-config-yaml, systemd-pc-hack ]
 
   ops-portd:
     plugin: cmake
