@@ -34,11 +34,7 @@ parts:
   ops-utils:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-utils
     after: [ openvswitch ]
 
@@ -46,7 +42,9 @@ parts:
     plugin: cmake
     source: https://github.com/lool/googletest.git
     source-type: git
-    configflags: [ "-DBUILD_SHARED_LIBS=ON" ]
+    configflags: 
+      - "-DBUILD_SHARED_LIBS=ON"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
 
   i2c-header-hack:
     plugin: copy
@@ -63,6 +61,8 @@ parts:
         #   sudo ln -s /usr/include/linux/i2c-dev.h /usr/include/linux/i2c-dev-user.h
         # fi
       - libyaml-cpp0.3-dev
+    configflags:
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
 
   ops-cli:
     plugin: autotools
@@ -74,6 +74,8 @@ parts:
       - "--enable-ovsdb"
       - "--enable-vtysh"
       - "--enable-shared"
+      - "--prefix=/usr"
+      - "--disable-static"
     source: openswitch/src/ops-cli
     after: [ openvswitch ]
     build-packages: [ libreadline-dev, pkg-config ]
@@ -85,11 +87,7 @@ parts:
   ops-arpmgrd:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-arpmgrd
     after: [ openvswitch ]
 
@@ -100,66 +98,47 @@ parts:
   ops-fand:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-fand
     after: [ openvswitch, ops-cli, ops-config-yaml ]
 
   ops-intfd:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-intfd
     after: [ openvswitch, ops-config-yaml, ops-utils ]
 
   ops-ledd:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-ledd
     after: [ openvswitch, ops-cli, ops-config-yaml ]
 
   ops-pmd:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-pmd
     after: [ openvswitch, ops-config-yaml ]
+
+  systemd-pc-hack:
+    plugin: copy
+    files:
+      systemd.pc: usr/lib/pkgconfig/systemd.pc
 
   ops-powerd:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-powerd
-    after: [ openvswitch, ops-cli, ops-config-yaml ]
+    after: [ openvswitch, ops-cli, ops-config-yaml, systemd-pc-hack ]
 
   ops-portd:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-portd
     after: [ openvswitch ]
 
@@ -175,22 +154,14 @@ parts:
 #  ops-switchd-opennsl-plugin:
 #    plugin: cmake
 #    configflags:
-#      - "-DCMAKE_C_FLAGS=-DOPS"
-#      - "-DCMAKE_CXX_FLAGS=-DOPS"
-#      - "-DCMAKE_BUILD_TYPE=Debug"
-#      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-#      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+#      - "-DCMAKE_INSTALL_PREFIX=/usr"
 #    source: openswitch/src/ops-switchd-opennsl-plugin
 #    after: [ openvswitch ]
 
   ops-sysd:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     build-packages:
       - zlib1g-dev
     source: openswitch/src/ops-sysd
@@ -199,22 +170,14 @@ parts:
   ops-tempd:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-tempd
     after: [ openvswitch, ops-cli, ops-config-yaml ]
 
   ops-vland:
     plugin: cmake
     configflags:
-      - "-DCMAKE_C_FLAGS=-DOPS"
-      - "-DCMAKE_CXX_FLAGS=-DOPS"
-      - "-DCMAKE_BUILD_TYPE=Debug"
-      - "-DCMAKE_C_FLAGS_DEBUG=-DO0"
-      - "-DCMAKE_CXX_FLAGS_DEBUG=-DO0"
+      - "-DCMAKE_INSTALL_PREFIX=/usr"
     source: openswitch/src/ops-vland
     after: [ openvswitch ]
 
