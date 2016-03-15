@@ -56,10 +56,7 @@ parts:
     plugin: cmake
     source: openswitch/src/ops-config-yaml
     after: [ gtest, i2c-header-hack ]
-    build-packages:
-        # if [ ! -e /usr/include/linux/i2c-dev-user.h ] ; then
-        #   sudo ln -s /usr/include/linux/i2c-dev.h /usr/include/linux/i2c-dev-user.h
-        # fi
+    stage-packages:
       - libyaml-cpp0.3-dev
     configflags:
       - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -162,7 +159,7 @@ parts:
     plugin: cmake
     configflags:
       - "-DCMAKE_INSTALL_PREFIX=/usr"
-    build-packages:
+    stage-packages:
       - zlib1g-dev
     source: openswitch/src/ops-sysd
     after: [ openvswitch, ops-config-yaml, ops-utils ]
